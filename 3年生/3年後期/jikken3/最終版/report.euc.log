@@ -1,0 +1,158 @@
+This is pTeXk, Version 3.141592-p3.1.10 (euc) (Web2C 7.5.6) (format=platex 2014.5.23)  26 NOV 2015 01:02
+ %&-line parsing enabled.
+**report.euc
+(./report.euc.tex
+pLaTeX2e <2006/11/10>+0 (based on LaTeX2e <2005/12/01> patch level 0)
+(/usr/share/texmf/ptex/platex/base/jarticle.cls
+Document Class: jarticle 2006/06/27 v1.6 Standard pLaTeX class
+\c@@paper=\count81
+(/usr/share/texmf/ptex/platex/base/jsize10.clo
+File: jsize10.clo 2006/06/27 v1.6 Standard pLaTeX file (size option)
+)
+\c@part=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
+\c@figure=\count88
+\c@table=\count89
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\symmincho=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 601.
+\toclineskip=\dimen118
+\@lnumwidth=\dimen119
+\bibindent=\dimen120
+\heisei=\count90
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 90.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen121
+\Gin@req@width=\dimen122
+) (./report.euc.aux)
+\openout1 = `report.euc.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 11.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 14.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 14.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 21.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 21.
+ [1
+
+]
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 55.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 55.
+
+[2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 116.
+
+ (/usr/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 116.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 117.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 117.
+ [3] [4] [5] [6] [7]
+Overfull \hbox (1.11859pt too wide) in paragraph at lines 483--483
+[]   \OT1/cmtt/m/n/10 103    if(strcmp(send_buf,"practice\n")==0) return 0;   /
+/ practice \JY1/mc/m/n/10 คว \OT1/cmtt/m/n/10 break;[] 
+ []
+
+[8] [9]
+Overfull \hbox (7.24629pt too wide) in paragraph at lines 483--483
+[]   \OT1/cmtt/m/n/10 202          recvbuf();                                  
+   // buf = "start\n"[] 
+ []
+
+[10] [11]
+Overfull \hbox (1.99634pt too wide) in paragraph at lines 885--885
+[]   \OT1/cmtt/m/n/10 120    for(data_count=0;(fgets(line, DATA_MAX + 1, fp) !=
+ NULL);data_count++)[] 
+ []
+
+
+Overfull \hbox (1.99634pt too wide) in paragraph at lines 885--885
+[]   \OT1/cmtt/m/n/10 157        sprintf(send_buf,"incorrect(%s)\n\n",tango[dat
+a_count-i].english);[] 
+ []
+
+
+Overfull \hbox (1.99634pt too wide) in paragraph at lines 885--885
+[]   \OT1/cmtt/m/n/10 160                tango[data_count-i].japanese,tango[dat
+a_count-i].english);[] 
+ []
+
+[12] [13] [14]
+Overfull \hbox (43.99597pt too wide) in paragraph at lines 885--885
+[]   \OT1/cmtt/m/n/10 316      while(bind(sockfd,(struct sockaddr *)&reader_add
+r,sizeof(reader_addr))==-1){[] 
+ []
+
+
+Overfull \hbox (91.24556pt too wide) in paragraph at lines 885--885
+[]   \OT1/cmtt/m/n/10 331      if ((new_sockfd = accept(sockfd,(struct sockaddr
+ *)&writer_addr, &writer_len)) < 0) {[] 
+ []
+
+[15] [16] (./report.euc.aux) ) 
+Here is how much of TeX's memory you used:
+ 623 strings out of 257674
+ 7114 string characters out of 1941521
+ 61891 words of memory out of 1500000
+ 3829 multiletter control sequences out of 10000+200000
+ 13871 words of font info for 54 fonts, out of 1200000 for 2000
+ 14 hyphenation exceptions out of 8191
+ 25i,6n,20p,415b,422s stack positions out of 5000i,500n,6000p,200000b,15000s
+
+Output written on report.euc.dvi (16 pages, 47564 bytes).

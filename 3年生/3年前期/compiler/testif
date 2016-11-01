@@ -1,0 +1,31 @@
+define a;
+define b;
+define c;
+define d;
+define e;
+define f;
+define i;
+
+main(){
+	a=10;
+	c=15;
+	d=10;
+	e=10;
+	f=20;
+	if(a==10){a=1;}
+	for(i=0;i<15;i=i+1){
+		if(b<11){b=b+1;}
+	}
+	for(i=15;i>0;i--){
+		if(c>12){c--;}
+	}
+	for(i=0;i!=13;i++){
+		if(d!=13){d++;}
+	}
+	for(i=0;i<=20;i++){
+		if(e<=13){e++;}
+	}
+	for(i=15;i>=0;i--){
+		if(f>=16){f--;}
+	}
+}

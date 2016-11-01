@@ -1,0 +1,430 @@
+（集合の）積,(set) intersection
+（集合の）和,(set) union
+角かっこ,(square) brakets
+…ならば～である,… imply ～
+…倍,… times
+絶対誤差,absolute error
+絶対値,"absolute value,   magnitude"
+抽象データ型,abstract data type
+参照,access
+参照可能な,accessible
+達成する,achieve
+達成,achievement
+行動する,act
+行動,action
+足す,add
+足し算,addition
+山かっこ,angle brackets
+近似する,approximate
+近似,approximation
+引数,argument
+四則演算,arithmetic operations
+配列,array
+主張する,assert
+主張,assertion
+代入する,assign
+代入,assignment
+結合法則,associative law
+属性,attribute
+～を…のせいにする,attribute ～ to …
+権限,authorization
+権限のある,authorized
+自己相関,autocorrelation
+公理,axiom
+公理化,axiomatization
+公理化する,axiomatize
+基底,basis (複数形は bases)
+2進数,binary number
+2項演算子,binary operator
+2進小数表現,binary representation
+両辺,both sides
+波かっこ,braces
+計算する,"calculate,   compute"
+計算,"calculation,   computation"
+桁落ち,cancelation
+撮影する,capture
+基数,cardinal number
+デカルト積，直積,Cartesian product
+特性根,characteristic equation
+特性関数,characteristic function
+クラス,class
+分離,classification
+分離する,classify
+クライアント,client
+"プログラム（として書かれた
+文字や記号）",code
+余因子,cofactor
+余因子行列,cofactor matrix
+列,column
+交換法則,commutative law
+補数形式,complement form
+完全な,complete
+完全性,completeness
+複素数,complex number
+成分（ベクトルの）,component
+成分ごとに,componentwise
+帰結，結論,conclusion
+条件,condition
+結合子,connective
+内容,content
+連続的な,continuous
+矛盾,contradiction
+対偶,contraposition
+対偶の,contrapositive
+逆,converse
+相関のある,correlated
+相関,correlation
+対応,correspondence
+対応する,corrsepond
+共分散,covariance
+3乗（する）,cube
+立方根,cube root
+累積分布,cumulative distribution
+次元の呪い,curse of dimensionality
+データ,data
+データ隠蔽,data hiding
+宣言する,decare
+10進数,decimal number
+小数点以下の桁,decimal place
+小数点,decimal point
+10進小数表現,decimal representation
+決定,decision
+宣言,declaration
+分解,decomposition
+自由度,degree of freedom
+消去する,delete
+消去,deletion
+分母,denominator
+密度関数,density function
+導出,derivation
+導関数,derivative
+導出する,derive
+デカルト,Descartes
+記述する,describe
+記述,description
+記述子,descriptor
+決定する,detect
+行列式,determinant
+対角要素,diagonal element
+対角行列,diagonal matrix
+差,difference
+微分する,differentiate
+微分すること,differentioation
+桁,digit
+次元,dimension
+離散的な,discrete
+交わりのない,disjoint
+表示，表示する,display
+分布,distribution
+分配法則,distributive law
+割る,divide
+被除数,dividend
+除算,division
+除数,divisor
+領域,domain
+効果,effect
+効果的な,effective
+固有値,eigenvalue
+固有ベクトル,eigenvector
+元，　要素,"element,   member"
+消去する,eliminate
+消去,elimination
+空集合,empty set
+カプセル化する,encapsulate
+カプセル化,encapsulation
+環境,environment
+等しい,"equal,   be equal to"
+等号，等式,equality
+等号,equality sign
+同値,equivalence
+同値関係,equivalence relation
+同値な,equivalent
+誤差,error
+推定する,estimate
+推定,estimation
+推定値，推定量,estimator
+ユークリッド,Euclid
+ユークリッドの,Euclidean
+事象,event
+排他,exclusion
+排他的な,exclusive
+存在する,exist
+存在,existence
+存在記号,existential quantifier
+展開する,expand
+展開,expansion
+期待値,"expection,   expected value"
+利用する,exploit
+利用,exploitation
+指数，指数部,exponent
+指数関数,exponential function
+表現する,express
+式，表現,expression
+拡張する,extend
+拡張,extension
+抽出する,extract
+抽出,extraction
+特徴,feature
+体（加減乗除ができる集合）,field
+有限の,finite
+固定小数点,fixed point
+浮動小数点,floating point
+浮動小数点型,floating type
+正式な,formal
+形式化する,formalization
+形式化する,formalize
+論理式,formula
+小数，分数,fraction
+関数,function
+大域的（な）,global
+文法,grammer
+成り立つ,hold
+単位元,identity
+単位行列,"identity matrix,   unit matrix"
+（写像の）像，画像,image
+画像処理,image processing
+虚数,imaginary number
+実装する,implement
+実装,implementation
+含意,implication
+参照不可能な,inaccessible
+包含関係,inclusion relation
+増分,increment
+独立,independence
+独立な,independent
+不等号，不等式,inequality
+不等号,inequality sign
+推論する,infer
+推論,inference
+無限の,infinite
+無限大の,infinity
+継承,inheritance
+内積,inner product
+整数,integer
+積分,integral
+積分する,integrate
+積分すること,integration
+相互作用する,interact
+相互作用,interaction
+補完する,interpolate
+補間,interpolation
+解釈する,interpret
+解釈,interpretation
+交わり,intersection
+逆元，逆行列,inverse
+結合分布,joint ditribution
+学習する,learn
+学習,learning
+左辺,left(-hand) side
+極限,limit
+線形結合,linear combination
+1次形式,linear form
+線形写像,linear mapping
+線形空間,linear space
+線形変換,linear transformation
+線形従属の,linearly dependent
+線形独立の,linearly independent
+局所的（な）,local
+論理，論理学,logic
+論理積,logical product
+論理和,logical sum
+小数部,mantissa
+写像,mapping
+周辺分布,marginal distribution
+行列,matrix
+平均,"mean,   average"
+測度,measure
+メンバー,member
+帰属関係,membership relation
+メソッド,method
+計量,metric
+小行列式,minor
+マイナス,minus
+モデル，　モデル化する,model
+単位，モジュール,module
+掛け算,multipliction
+掛ける,multiply
+自然数,natural number
+必要条件,necessary condition
+否定,negation
+負,negative
+ニューラルネットワーク,neural network
+負でない（非負）,non-negative
+正則な，非特異な,nonsingular
+零でない,non-zero
+ノルム,norm
+正規化,normalization
+正規化する,normalize
+分子,numerator
+オブジェクト，物体,object
+オブジェクト指向の,object-oriented
+生起する,occur
+生起,occurrence
+演算対象,operand
+演算する,operate
+演算,operation
+演算子,operator
+最適な,optimal
+最適性,optimality
+最適値,optimum
+階数，順序,order
+序数,ordinal number
+向きづける,orient
+向き,orientation
+直交する,orthogonal
+直交行列,orthogonal matrix
+正規直交の,orthonormal
+…で除す,over …
+桁あふれ,overflow
+"ひとまとまりにする
+ひとかとまり（にしたもの）",package
+（丸）かっこ,"parentheses,   round brackets"
+偏導関数,partial derivative
+偏微分,partial differentiation
+パターン認識,pattern recognition
+画素,pixel
+平面的な,planar
+平面,plane
+プラス,plus
+多項式,polynomial
+正,positive
+正値の,positive definite
+半正値の,positive semidefinite
+後置,postfix
+べき,power
+優先する,precede
+優先順位,precedence
+述語,predicate
+予測,predicion
+予測する,predict
+前置,prefix
+前提,premise
+ダッシュ,prime
+主成分分析,principal component analysis
+確率,probability
+処理する，（個々の）処理,process
+処理（すること）,processing
+積,product
+プログラム，プログラムする,program
+証明,proof
+命題,proposition
+命題結合子,propositional connective
+命題結合子,propositional connective
+命題論理式,propositional formula
+命題論理,propositional logic
+保護する,protect
+保護,protection
+証明する,prove
+一般逆行列,"pseudoinverse,   generalized inverse"
+2次形式,quadratic form
+限定記号,quantifier
+修飾する,quantify
+商,quotient
+根号,radical symbol
+べき乗,raise
+確率変数,random variable
+ランク,rank
+有理数,rational number
+実数,real number
+逆数,reciprocal
+認識,recognition
+認識する,recognize
+長方行列,rectangular matrix
+鏡像，反転,reflection
+強化学習,reinforcement learning
+関係,relation
+相対誤差,relative error
+余り，剰余,remainder
+右辺,right(-hand) side
+根,root
+丸める（四捨五入する）,round
+丸め誤差,roundoff error
+行,row
+推論規則,rule of inference
+サンプル（標本）,sample
+サンプル空間（標本空間）,sample space
+充足可能,satisfiable
+スカラ,scalar
+スカラ倍,scalar multiple
+シュワルツの不等式,Schwarz inequality
+分割する，分割部分,segment
+分割,segmentation
+意味の,semantic
+意味論,semantics
+数列,sequence
+級数,series
+集合,set
+集合演算,set operation
+符号,sign
+信号,signal
+信号処理,signal processing
+有効数字,significant digit
+特異な,singular
+特異値分解,singular value decomposition
+解,solution
+健全な,sound
+健全性,soundness
+特定の,specific
+特定化,specification
+特定する,specify
+スペクトル分解,spectral decomposition
+音声認識,speech recognition
+音声,"speech,    sound"
+2乗（する）,square
+正方行列,square matrix
+平方根,square root
+標準偏差,standard deviation
+標準の,"standard,   canonical"
+言明する，状態,state
+文，言明,statement
+統計的に,statistically
+統計学,statistics
+記憶する,store
+文字列,string
+記号列,string of symbols
+小行列,submatrix
+下添え字,subscript
+部分集合,subset
+代入する,substitute
+代入,substitution
+引く,subtract
+引き算,subtraction
+十分条件,sufficient condition
+和,sum
+上添え字,superscript
+上位集合,superset
+教師あり学習,supervised learning
+対称行列,symmetric matirx
+構文，構文論,syntax
+目標,target
+恒真式，トートロジー,tautology
+項,term
+小数点以下第～桁,the ～th decimal place
+定理,theorem
+トレース,trace
+トレードオフ，妥協,trade-off
+転置，転置行列,transpose
+試行錯誤,trial and error
+三角不等式,triangular inequality
+真理値表,truth table
+型,type
+単項演算子,unary operator
+権限のない,unauthorized
+相関のない,uncorrelated
+一意的な,unique
+全称記号,universal quantifier
+世界,universe
+教師なし学習,unsupervised learning
+ユーザ定義の,user-defined
+値,value
+変数,variable
+分散,variance
+ベクトル,vector
+ベクトル空間,vector space
+検証可能,verifiable
+検証,verification
+検証する,verify
+重み，重みづける,weight
+整合,well-formed
+整合論理式（整式）,well-formed formula  (wff)
+零,"zero,   naught"

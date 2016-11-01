@@ -1,0 +1,29 @@
+;*******************************************************
+;*       sample script file for OPT_MAP ver 2.3        *
+;*******************************************************
+
+echo ####### start #############################
+scalc
+echo --- initial statistics summary ------------
+move
+echo --- initial component summary -------------
+lc
+
+echo ####### remove ############################
+rm
+
+echo ####### after remove ######################
+scalc
+echo --- statistics summary --------------------
+move
+echo --- component summary ---------------------
+lc
+
+;**********************************
+;*      execute script file       *
+;**********************************
+alu32.ons
+
+echo ####### output ############################
+write_org_type alu32.2nd
+bye

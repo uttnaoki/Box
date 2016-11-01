@@ -1,0 +1,61 @@
+This is pTeXk, Version 3.141592-p3.1.10 (euc) (Web2C 7.5.6) (format=platex 2014.5.23)  21 JUL 2015 11:15
+ %&-line parsing enabled.
+**test.euc
+(./test.euc.tex
+pLaTeX2e <2006/11/10>+0 (based on LaTeX2e <2005/12/01> patch level 0)
+(/usr/share/texmf/ptex/platex/base/jarticle.cls
+Document Class: jarticle 2006/06/27 v1.6 Standard pLaTeX class
+\c@@paper=\count81
+(/usr/share/texmf/ptex/platex/base/jsize10.clo
+File: jsize10.clo 2006/06/27 v1.6 Standard pLaTeX file (size option)
+)
+\c@part=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
+\c@figure=\count88
+\c@table=\count89
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\symmincho=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 601.
+\toclineskip=\dimen118
+\@lnumwidth=\dimen119
+\bibindent=\dimen120
+\heisei=\count90
+) (./test.euc.aux)
+\openout1 = `test.euc.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+ [1
+
+]
+(./test.euc.aux) ) 
+Here is how much of TeX's memory you used:
+ 252 strings out of 257674
+ 2487 string characters out of 1941521
+ 53023 words of memory out of 1500000
+ 3494 multiletter control sequences out of 10000+200000
+ 7679 words of font info for 32 fonts, out of 1200000 for 2000
+ 14 hyphenation exceptions out of 8191
+ 22i,4n,19p,152b,242s stack positions out of 5000i,500n,6000p,200000b,15000s
+
+Output written on test.euc.dvi (1 page, 3512 bytes).

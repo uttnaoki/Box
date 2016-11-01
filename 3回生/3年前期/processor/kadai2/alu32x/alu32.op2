@@ -1,0 +1,99 @@
+;*******************************************************
+;*       sample script file for OPT_MAP ver 2.3        *
+;*******************************************************
+
+echo ####### start  ############################
+scalc
+echo --- initial statistics summary ------------
+move
+echo --- initial component summary -------------
+lc
+
+echo ####### remove ############################
+rm
+
+echo ####### after remove ######################
+scalc
+echo --- statistics summary --------------------
+move
+echo --- component summary ---------------------
+lc
+
+echo ####### set conditions ####################
+init pin 20
+unset /m_clock
+unset \m_clock
+unset /s_clock
+unset \s_clock
+unset /b_clock
+unset \b_clock
+unset /scan_clock
+unset \scan_clock
+setv ?cycle     1000
+set /m_clock       0
+set \m_clock     100
+set /b_clock     500
+set \b_clock    1100
+set /scan_clock    0
+set \scan_clock  100
+max ~m_clock       1 clock_load
+max ~scan_clock    1 clock_load
+max ~p_reset       1 reset_load
+
+echo ####### initial constraint ################
+scalc
+lcalc
+dcalc
+clock
+echo
+hist lctf
+
+echo ####### optimize ##########################
+opt
+opt
+opt
+;opt delay
+;opt delay
+;opt delay
+;opt
+
+echo ####### flat ############################
+flat
+lc
+maxn /
+
+;**********************************
+;*      execute script file       *
+;**********************************
+alu32.cpb
+
+echo ####### remained constraint ###############
+hist lctf
+
+echo ####### summary ###########################
+echo
+hist path /
+hist path \
+hist path %
+echo
+hist net ~
+maxn / 1
+maxn \ 1
+maxn % 1
+echo
+scalc
+echo --- statistics summary --------------------
+move
+echo --- component summary ---------------------
+lca
+echo --- pin summary ---------------------------
+lp
+
+echo ####### output ############################
+;insg VDD
+;insg VSS
+scan
+last_org_type alu32.4th
+cnn
+edif alu32.edif200
+bye

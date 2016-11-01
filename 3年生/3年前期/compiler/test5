@@ -1,0 +1,29 @@
+define data[10];
+
+quicksort(a[],l,r){
+define v;
+define i;
+define j;
+define t;
+define ii;
+
+if(r>l){
+	v=a[r];
+	i=l-1;
+	j=r;
+	for(i=0;i<10;i=i+0){
+		while(a[i]<v) {i++;}
+		while(a[j]>v) {j--;}
+		if (i >= j) {break;}
+		t=a[i]; a[i]=a[j]; a[j]=t;
+	}
+	t=a[i]; a[i]=a[r]; a[r]=t;
+
+	quicksort(a, l, i-1);
+	quicksort(a, i+1, r);
+}
+}
+main(){
+	define i;
+	quicksort(data, 0, 9);
+}

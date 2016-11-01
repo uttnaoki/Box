@@ -1,0 +1,19 @@
+(def-module	alu32_sl1-2_m1-1
+	(def-pin	in1	type input)
+	(def-pin	in2	type input)
+	(def-pin	in3	type input)
+	(def-pin	out1	type output)
+	(def-pin	in4	type input)
+
+	(def-comp	nand--2	nand-1)
+	(def-comp	nand--2	nand-2)
+	(def-comp	nand--2	nand-3)
+
+	(def-net	nand-1.nout	nand-2.in2)
+	(def-net	nand-3.nout	nand-2.in1)
+	(def-net	in1	nand-1.in2)
+	(def-net	in2	nand-3.in1)
+	(def-net	in3	nand-1.in1)
+	(def-net	out1	nand-2.nout)
+	(def-net	in4	nand-3.in2)
+)

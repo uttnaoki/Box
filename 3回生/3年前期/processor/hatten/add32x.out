@@ -1,0 +1,80 @@
+rm -rf add32x.2nd add32x.2on add32x.2off
+mkdir add32x.2nd
+echo add32x.op1 | opt_map add32x add32x.1st /home/users/ecs/nobuya/opt/parthenon/sfl_lib.dir /home/users/ecs/nobuya/opt/parthenon/cell_lib.dir/DEMO/demo/start.dir /home/users/ecs/nobuya/opt/parthenon/cell_lib.dir/DEMO/demo/start_ex.dir
+
++-------------------------------------------------------------+
+| OPT_MAP       3.0 2002/08/31 (i686-Linux-2.6.27-10-generic) |
+|             This program is a part of the PARTHENON system. |
+|                                 Copyright (C) 1989-2002 NTT |
++-------------------------------------------------------------+
+
+** load library from add32x.1st **
+** load library from /home/users/ecs/nobuya/opt/parthenon/sfl_lib.dir **
+opt_map: start to read r1024_8.pcd
+opt_map: start to read r256_8.pcd
+opt_map: start to read r64_8.pcd
+** load library from /home/users/ecs/nobuya/opt/parthenon/cell_lib.dir/DEMO/demo/start.dir **
+opt_map: start to read and--2.pcd
+opt_map: start to read and--3.pcd
+opt_map: start to read and--4.pcd
+opt_map: start to read and--5.pcd
+opt_map: start to read and--6.pcd
+opt_map: start to read and--7.pcd
+opt_map: start to read and--8.pcd
+opt_map: start to read aoi--21.pcd
+opt_map: start to read aoi--211.pcd
+opt_map: start to read aoi--22.pcd
+opt_map: start to read aoi--221.pcd
+opt_map: start to read aoi--222.pcd
+opt_map: start to read aoi--31.pcd
+opt_map: start to read aoi--32.pcd
+opt_map: start to read aoi--33.pcd
+opt_map: start to read bgate--2.pcd
+opt_map: start to read enor--2.pcd
+opt_map: start to read eor--2.pcd
+opt_map: start to read high-.pcd
+opt_map: start to read inv-.pcd
+opt_map: start to read low-.pcd
+opt_map: start to read nand--2.pcd
+opt_map: start to read nand--3.pcd
+opt_map: start to read nand--4.pcd
+opt_map: start to read nand--5.pcd
+opt_map: start to read nand--6.pcd
+opt_map: start to read nand--7.pcd
+opt_map: start to read nand--8.pcd
+opt_map: start to read ninv-.pcd
+opt_map: start to read nor--2.pcd
+opt_map: start to read nor--3.pcd
+opt_map: start to read nor--4.pcd
+opt_map: start to read nor--5.pcd
+opt_map: start to read nor--6.pcd
+opt_map: start to read nor--7.pcd
+opt_map: start to read nor--8.pcd
+opt_map: start to read oai--21.pcd
+opt_map: start to read oai--211.pcd
+opt_map: start to read oai--22.pcd
+opt_map: start to read oai--221.pcd
+opt_map: start to read oai--222.pcd
+opt_map: start to read oai--31.pcd
+opt_map: start to read oai--32.pcd
+opt_map: start to read oai--33.pcd
+opt_map: start to read or--2.pcd
+opt_map: start to read or--3.pcd
+opt_map: start to read or--4.pcd
+opt_map: start to read or--5.pcd
+opt_map: start to read or--6.pcd
+opt_map: start to read or--7.pcd
+opt_map: start to read or--8.pcd
+opt_map: start to read reg---1.pcd
+opt_map: start to read reg--1.pcd
+opt_map: start to read reg-1.pcd
+opt_map: start to read regr-1.pcd
+opt_map: start to read regs-1.pcd
+opt_map: start to read sreg---1.pcd
+opt_map: start to read sreg--1.pcd
+opt_map: start to read sreg-1.pcd
+opt_map: start to read srgr-1.pcd
+opt_map: start to read srgs-1.pcd
+opt_map: start to read ts_buf-.pcd
+** load library from /home/users/ecs/nobuya/opt/parthenon/cell_lib.dir/DEMO/demo/start_ex.dir **
+** install top module (add32x) **

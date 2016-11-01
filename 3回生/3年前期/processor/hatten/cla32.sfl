@@ -1,0 +1,137 @@
+%i "allcla.h"
+
+module cla{
+    input a, b, cin;
+    output sum, cout;
+    output pout, qout;
+
+    instrin do;
+
+    sel_v p, q;
+
+    instruct do par{
+	p = a @ b;
+	q = a & b;
+
+	sum = p @ cin;
+	cout = (p & cin) | q;
+
+	pout = p;
+	qout = q;
+    }
+}
+
+module cla2{
+    input a<2>, b<2>, cin;
+    output sum<2>, cout;
+    output pout, qout;
+
+    instrin do;
+
+    sel_v c0, c1;
+    cla cx, cy;
+
+    instruct do par{
+	c0 = cin;
+	c1 = (cin & cx.pout) | cx.qout;
+
+	sum = cy.do(a<1>, b<1>, c1).sum ||
+	      cx.do(a<0>, b<0>, c0).sum;
+
+	pout = cx.pout & cy.pout;
+	qout = cy.qout | (cy.pout & cx.qout);
+	cout = qout | pout & cin;
+    }
+}
+
+module cla4{
+    input a<4>, b<4>, cin;
+    output sum<4>, cout;
+    output pout, qout;
+
+    instrin do;
+
+    sel_v c0, c1;
+    cla2 c2x, c2y;
+
+    instruct do par{
+	c0 = cin;
+	c1 = (cin & c2x.pout) | c2x.qout;
+
+	sum = c2y.do(a<3:2>, b<3:2>, c1).sum ||
+	      c2x.do(a<1:0>, b<1:0>, c0).sum;
+
+	pout = c2x.pout & c2y.pout;
+	qout = c2y.qout | (c2y.pout & c2x.qout);
+	cout = qout | pout & cin;
+    }
+}
+
+module cla8{
+    input a<8>, b<8>, cin;
+    output sum<8>, cout;
+    output pout, qout;
+
+    instrin do;
+
+    sel_v c0, c1;
+    cla4 c4x, c4y;
+
+    instruct do par{
+	c0 = cin;
+	c1 = (cin & c4x.pout) | c4x.qout;
+
+	sum = c4y.do(a<7:4>, b<7:4>, c1).sum ||
+	      c4x.do(a<3:0>, b<3:0>, c0).sum;
+
+	pout = c4x.pout & c4y.pout;
+	qout = c4y.qout | (c4y.pout & c4x.qout);
+	cout = qout | pout & cin;
+    }
+}
+
+module cla16{
+    input a<16>, b<16>, cin;
+    output sum<16>, cout;
+    output pout, qout;
+
+    instrin do;
+
+    sel_v c0, c1;
+    cla8 c8x, c8y;
+
+    instruct do par{
+	c0 = cin;
+	c1 = (cin & c8x.pout) | c8x.qout;
+
+	sum = c8y.do(a<15:8>, b<15:8>, c1).sum ||
+	      c8x.do(a<7:0>, b<7:0>, c0).sum;
+
+	pout = c8x.pout & c8y.pout;
+	qout = c8y.qout | (c8y.pout & c8x.qout);
+	cout = qout | pout & cin;
+    }
+}
+
+module cla32{
+    input a<32>, b<32>, cin;
+    output sum<32>, cout;
+    output pout, qout;
+
+    instrin do;
+
+    sel_v c0, c1;
+    cla16 c16x, c16y;
+
+    instruct do par{
+	c0 = cin;
+	c1 = (cin & c16x.pout) | c16x.qout;
+
+	sum = c16y.do(a<31:16>, b<31:16>, c1).sum ||
+	      c16x.do(a<15:0>, b<15:0>, c0).sum;
+
+	pout = c16x.pout & c16y.pout;
+	qout = c16y.qout | (c16y.pout & c16x.qout);
+	cout = qout | pout & cin;
+    }
+}

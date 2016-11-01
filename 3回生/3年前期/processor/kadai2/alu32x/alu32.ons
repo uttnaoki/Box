@@ -1,0 +1,99 @@
+echo OK!
+echo ####### ONSET iteration 1 #######
+;*******************************************************
+;*       sample script file for OPT_MAP ver 2.3        *
+;*     apply ONSET at each nld in the top-module       *
+;*   (break hierarchy in each nld in the top-module)   *
+;*         max 12 inputs in eclosed nlds         *
+;*******************************************************
+
+echo ####### apply ONSET on each flatten submodule ########
+lsn
+echo --- flat & enclose at each nld in the top-module -------
+eachn "@
+  flat,@
+  encia 12,@
+  dise 2@
+"  alu32._tp
+alu32._tp
+encia 12
+dise 2
+scalc
+
+;; K.Nagami modified: Wed May 24 15:47:32 2000
+eachnre "@
+  !echo @"--------- submodule $S ------------@",@
+  !mkdir alu32._dr,@
+  blif alu32._dr,@
+  !onset -f `parthenon_which -d`/com/onset.dir/b2n_area.scr alu32._dr/$C off,@
+  ina alu32._dr,@
+  flat,@
+  !rm -r alu32._dr,@
+  scalcm@
+" alu32._tp
+alu32._tp
+
+echo --- disclose -------------------------------
+eachnrn "@
+  dise@
+"  alu32._tp
+alu32._tp
+dise
+
+echo ####### after ONSET ###################
+rm
+scalc
+echo --- statistics summary --------------------
+move
+echo --- component summary ---------------------
+lc
+
+echo ####### ONSET iteration 2 #######
+;*******************************************************
+;*       sample script file for OPT_MAP ver 2.3        *
+;*     apply ONSET at each nld in the top-module       *
+;*   (break hierarchy in each nld in the top-module)   *
+;*         max 12 inputs in eclosed nlds         *
+;*******************************************************
+
+echo ####### apply ONSET on each flatten submodule ########
+lsn
+echo --- flat & enclose at each nld in the top-module -------
+eachn "@
+  flat,@
+  encia 12,@
+  dise 2@
+"  alu32._tp
+alu32._tp
+encia 12
+dise 2
+scalc
+
+;; K.Nagami modified: Wed May 24 15:47:32 2000
+eachnre "@
+  !echo @"--------- submodule $S ------------@",@
+  !mkdir alu32._dr,@
+  blif alu32._dr,@
+  !onset -f `parthenon_which -d`/com/onset.dir/b2n_area.scr alu32._dr/$C off,@
+  ina alu32._dr,@
+  flat,@
+  !rm -r alu32._dr,@
+  scalcm@
+" alu32._tp
+alu32._tp
+
+echo --- disclose -------------------------------
+eachnrn "@
+  dise@
+"  alu32._tp
+alu32._tp
+dise
+
+echo ####### after ONSET ###################
+rm
+scalc
+echo --- statistics summary --------------------
+move
+echo --- component summary ---------------------
+lc
+

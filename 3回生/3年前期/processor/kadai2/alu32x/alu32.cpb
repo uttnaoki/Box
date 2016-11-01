@@ -1,0 +1,63 @@
+echo OK!
+echo ####### ONSET CPB iteration 1 #######
+;*******************************************************
+;*       sample script file for OPT_MAP ver 2.3        *
+;*       apply ONSET for Critical Path Breaking        *
+;*         max 12 inputs in eclosed nlds         *
+;*******************************************************
+
+echo ####### critical path break ##################
+encid 12 /
+scalc
+;; K.Nagami modified: Fri Jun  9 11:50:26 2000
+eachnre "@
+  !echo @"--------- submodule $S ------------@",@
+  !mkdir alu32._dr,@
+  blif alu32._dr,@
+  !onset -f `parthenon_which -d`/com/onset.dir/b2n_dly.scr alu32._dr/$C off,@
+  in alu32._dr,@
+  flat,@
+  !rm -r alu32._dr,@
+  scalcm@
+" alu32._tp
+alu32._tp
+dise
+scalc
+lcalc
+dcalc
+opt
+opt
+move
+maxn /
+
+echo ####### ONSET CPB iteration 2 #######
+;*******************************************************
+;*       sample script file for OPT_MAP ver 2.3        *
+;*       apply ONSET for Critical Path Breaking        *
+;*         max 12 inputs in eclosed nlds         *
+;*******************************************************
+
+echo ####### critical path break ##################
+encid 12 /
+scalc
+;; K.Nagami modified: Fri Jun  9 11:50:26 2000
+eachnre "@
+  !echo @"--------- submodule $S ------------@",@
+  !mkdir alu32._dr,@
+  blif alu32._dr,@
+  !onset -f `parthenon_which -d`/com/onset.dir/b2n_dly.scr alu32._dr/$C off,@
+  in alu32._dr,@
+  flat,@
+  !rm -r alu32._dr,@
+  scalcm@
+" alu32._tp
+alu32._tp
+dise
+scalc
+lcalc
+dcalc
+opt
+opt
+move
+maxn /
+

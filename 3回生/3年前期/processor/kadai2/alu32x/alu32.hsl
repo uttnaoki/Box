@@ -1,0 +1,1562 @@
+IDENT: SFL ;
+DATE: 2015/8/3 ;
+AUTHOR: 09425521 ;
+VERSION: 1.8 ;
+COMMENT: SFL pure logic ;
+COLLECTION: SFL ;
+PROJECT: SFL ;
+
+NAME: alu32 ;
+PURPOSE: SFL ;
+PROCESS: SFL ;
+LEVEL: SFL ;
+EXT:
+	a<31:0>,
+	b<31:0>,
+	out<31:0>,
+	overflow,
+	zero,
+	op_add,
+	op_sub,
+	op_and,
+	op_or,
+	op_xor,
+	op_nor,
+	b_clock,
+	m_clock,
+	s_clock,
+	p_reset ;
+INPUTS:
+	.a<31:0>,
+	.b<31:0>,
+	.op_add,
+	.op_sub,
+	.op_and,
+	.op_or,
+	.op_xor,
+	.op_nor,
+	.b_clock,
+	.m_clock,
+	.s_clock,
+	.p_reset ;
+OUTPUTS:
+	.out<31:0>,
+	.overflow,
+	.zero ;
+TYPES:
+	high-,
+	low-,
+	eor--2,
+	cla32,
+	sl32-2,
+	sl1-2,
+	sl32-5,
+	inv-,
+	nand--8,
+	nand--2,
+	nor--2,
+	nor--4 ;
+cla32:
+	adder ;
+sl32-2:
+	sel-3 ;
+sl1-2:
+	sel-2,
+	sel-4 ;
+sl32-5:
+	sel-1 ;
+inv-:
+	inv-1,
+	inv-2,
+	inv-3,
+	inv-4,
+	inv-5,
+	inv-6,
+	inv-7,
+	inv-8,
+	inv-9,
+	inv-10,
+	inv-11,
+	inv-12,
+	inv-13,
+	inv-14,
+	inv-15,
+	inv-16,
+	inv-17,
+	inv-18,
+	inv-19,
+	inv-20,
+	inv-21,
+	inv-22,
+	inv-23,
+	inv-24,
+	inv-25,
+	inv-26,
+	inv-27,
+	inv-28,
+	inv-29,
+	inv-30,
+	inv-31,
+	inv-32,
+	inv-33,
+	inv-34,
+	inv-35,
+	inv-36,
+	inv-37,
+	inv-38,
+	inv-39,
+	inv-40,
+	inv-41,
+	inv-42,
+	inv-43,
+	inv-44,
+	inv-45,
+	inv-46,
+	inv-47,
+	inv-48,
+	inv-49,
+	inv-50,
+	inv-51,
+	inv-52,
+	inv-53,
+	inv-54,
+	inv-55,
+	inv-56,
+	inv-57,
+	inv-58,
+	inv-59,
+	inv-60,
+	inv-61,
+	inv-62,
+	inv-63,
+	inv-64,
+	inv-65,
+	inv-66,
+	inv-67,
+	inv-68,
+	inv-69,
+	inv-70,
+	inv-71,
+	inv-72,
+	inv-73,
+	inv-74,
+	inv-75,
+	inv-76,
+	inv-77,
+	inv-78,
+	inv-79,
+	inv-80,
+	inv-81,
+	inv-82,
+	inv-83,
+	inv-84,
+	inv-85,
+	inv-86,
+	inv-87,
+	inv-88,
+	inv-89,
+	inv-90,
+	inv-91,
+	inv-92,
+	inv-93,
+	inv-94,
+	inv-95,
+	inv-96,
+	inv-97,
+	inv-98,
+	inv-99,
+	inv-100 ;
+nand--8:
+	nand-34,
+	nand-35,
+	nand-36,
+	nand-37 ;
+nand--2:
+	nand-1,
+	nand-2,
+	nand-3,
+	nand-4,
+	nand-5,
+	nand-6,
+	nand-7,
+	nand-8,
+	nand-9,
+	nand-10,
+	nand-11,
+	nand-12,
+	nand-13,
+	nand-14,
+	nand-15,
+	nand-16,
+	nand-17,
+	nand-18,
+	nand-19,
+	nand-20,
+	nand-21,
+	nand-22,
+	nand-23,
+	nand-24,
+	nand-25,
+	nand-26,
+	nand-27,
+	nand-28,
+	nand-29,
+	nand-30,
+	nand-31,
+	nand-32,
+	nand-33 ;
+nor--2:
+	nor-2,
+	nor-3,
+	nor-4,
+	nor-5,
+	nor-6,
+	nor-7,
+	nor-8,
+	nor-9,
+	nor-10,
+	nor-11,
+	nor-12,
+	nor-13,
+	nor-14,
+	nor-15,
+	nor-16,
+	nor-17,
+	nor-18,
+	nor-19,
+	nor-20,
+	nor-21,
+	nor-22,
+	nor-23,
+	nor-24,
+	nor-25,
+	nor-26,
+	nor-27,
+	nor-28,
+	nor-29,
+	nor-30,
+	nor-31,
+	nor-32,
+	nor-33,
+	nor-34,
+	nor-35,
+	nor-36,
+	nor-37,
+	nor-38,
+	nor-39,
+	nor-40,
+	nor-41,
+	nor-42,
+	nor-43,
+	nor-44,
+	nor-45,
+	nor-46,
+	nor-47,
+	nor-48,
+	nor-49,
+	nor-50,
+	nor-51,
+	nor-52,
+	nor-53,
+	nor-54,
+	nor-55,
+	nor-56,
+	nor-57,
+	nor-58,
+	nor-59,
+	nor-60,
+	nor-61,
+	nor-62,
+	nor-63,
+	nor-64,
+	nor-65,
+	nor-66,
+	nor-67 ;
+nor--4:
+	nor-1 ;
+eor--2:
+	eor-1,
+	eor-2,
+	eor-3,
+	eor-4,
+	eor-5,
+	eor-6,
+	eor-7,
+	eor-8,
+	eor-9,
+	eor-10,
+	eor-11,
+	eor-12,
+	eor-13,
+	eor-14,
+	eor-15,
+	eor-16,
+	eor-17,
+	eor-18,
+	eor-19,
+	eor-20,
+	eor-21,
+	eor-22,
+	eor-23,
+	eor-24,
+	eor-25,
+	eor-26,
+	eor-27,
+	eor-28,
+	eor-29,
+	eor-30,
+	eor-31,
+	eor-32,
+	eor-33,
+	eor-34,
+	eor-35,
+	eor-36 ;
+high-:
+	high- ;
+low-:
+	low- ;
+END-TYPES ;
+NET-SECTION ;
+"***** task set reset *****"
+"***** dummy bus *****"
+"***** dummy instrself *****"
+"***** simple path *****"
+net-adder-sum<31> =	FROM( adder.sum<31> )	TO( eor-2.in2 ) ;
+net--b<31> =	FROM( .b<31> )	TO( eor-1.in2 ) ;
+net--b<31> =	FROM( .b<31> )	TO( eor-2.in1 ) ;
+net--a<31> =	FROM( .a<31> )	TO( eor-1.in1 ) ;
+net-nor-1-nout =	FROM( nor-1.nout )	TO( .zero ) ;
+net--a<31:0> =	FROM( .a<31:0> )	TO( adder.a<31:0> ) ;
+net-nand-1-nout =	FROM( nand-1.nout )	TO( adder.do ) ;
+net-adder-sum<31> =	FROM( adder.sum<31> )	TO( eor-4.in2 ) ;
+net--b<31> =	FROM( .b<31> )	TO( eor-3.in2 ) ;
+net--b<31> =	FROM( .b<31> )	TO( eor-4.in1 ) ;
+net--a<31> =	FROM( .a<31> )	TO( eor-3.in1 ) ;
+net--b<0> =	FROM( .b<0> )	TO( eor-36.in2 ) ;
+net--b<1> =	FROM( .b<1> )	TO( eor-35.in2 ) ;
+net--b<2> =	FROM( .b<2> )	TO( eor-34.in2 ) ;
+net--b<3> =	FROM( .b<3> )	TO( eor-33.in2 ) ;
+net--b<4> =	FROM( .b<4> )	TO( eor-32.in2 ) ;
+net--b<5> =	FROM( .b<5> )	TO( eor-31.in2 ) ;
+net--b<6> =	FROM( .b<6> )	TO( eor-30.in2 ) ;
+net--b<7> =	FROM( .b<7> )	TO( eor-29.in2 ) ;
+net--b<8> =	FROM( .b<8> )	TO( eor-28.in2 ) ;
+net--b<9> =	FROM( .b<9> )	TO( eor-27.in2 ) ;
+net--b<10> =	FROM( .b<10> )	TO( eor-26.in2 ) ;
+net--b<11> =	FROM( .b<11> )	TO( eor-25.in2 ) ;
+net--b<12> =	FROM( .b<12> )	TO( eor-24.in2 ) ;
+net--b<13> =	FROM( .b<13> )	TO( eor-23.in2 ) ;
+net--b<14> =	FROM( .b<14> )	TO( eor-22.in2 ) ;
+net--b<15> =	FROM( .b<15> )	TO( eor-21.in2 ) ;
+net--b<16> =	FROM( .b<16> )	TO( eor-20.in2 ) ;
+net--b<17> =	FROM( .b<17> )	TO( eor-19.in2 ) ;
+net--b<18> =	FROM( .b<18> )	TO( eor-18.in2 ) ;
+net--b<19> =	FROM( .b<19> )	TO( eor-17.in2 ) ;
+net--b<20> =	FROM( .b<20> )	TO( eor-16.in2 ) ;
+net--b<21> =	FROM( .b<21> )	TO( eor-15.in2 ) ;
+net--b<22> =	FROM( .b<22> )	TO( eor-14.in2 ) ;
+net--b<23> =	FROM( .b<23> )	TO( eor-13.in2 ) ;
+net--b<24> =	FROM( .b<24> )	TO( eor-12.in2 ) ;
+net--b<25> =	FROM( .b<25> )	TO( eor-11.in2 ) ;
+net--b<26> =	FROM( .b<26> )	TO( eor-10.in2 ) ;
+net--b<27> =	FROM( .b<27> )	TO( eor-9.in2 ) ;
+net--b<28> =	FROM( .b<28> )	TO( eor-8.in2 ) ;
+net--b<29> =	FROM( .b<29> )	TO( eor-7.in2 ) ;
+net--b<30> =	FROM( .b<30> )	TO( eor-6.in2 ) ;
+net--b<31> =	FROM( .b<31> )	TO( eor-5.in2 ) ;
+net--a<0> =	FROM( .a<0> )	TO( eor-36.in1 ) ;
+net--a<1> =	FROM( .a<1> )	TO( eor-35.in1 ) ;
+net--a<2> =	FROM( .a<2> )	TO( eor-34.in1 ) ;
+net--a<3> =	FROM( .a<3> )	TO( eor-33.in1 ) ;
+net--a<4> =	FROM( .a<4> )	TO( eor-32.in1 ) ;
+net--a<5> =	FROM( .a<5> )	TO( eor-31.in1 ) ;
+net--a<6> =	FROM( .a<6> )	TO( eor-30.in1 ) ;
+net--a<7> =	FROM( .a<7> )	TO( eor-29.in1 ) ;
+net--a<8> =	FROM( .a<8> )	TO( eor-28.in1 ) ;
+net--a<9> =	FROM( .a<9> )	TO( eor-27.in1 ) ;
+net--a<10> =	FROM( .a<10> )	TO( eor-26.in1 ) ;
+net--a<11> =	FROM( .a<11> )	TO( eor-25.in1 ) ;
+net--a<12> =	FROM( .a<12> )	TO( eor-24.in1 ) ;
+net--a<13> =	FROM( .a<13> )	TO( eor-23.in1 ) ;
+net--a<14> =	FROM( .a<14> )	TO( eor-22.in1 ) ;
+net--a<15> =	FROM( .a<15> )	TO( eor-21.in1 ) ;
+net--a<16> =	FROM( .a<16> )	TO( eor-20.in1 ) ;
+net--a<17> =	FROM( .a<17> )	TO( eor-19.in1 ) ;
+net--a<18> =	FROM( .a<18> )	TO( eor-18.in1 ) ;
+net--a<19> =	FROM( .a<19> )	TO( eor-17.in1 ) ;
+net--a<20> =	FROM( .a<20> )	TO( eor-16.in1 ) ;
+net--a<21> =	FROM( .a<21> )	TO( eor-15.in1 ) ;
+net--a<22> =	FROM( .a<22> )	TO( eor-14.in1 ) ;
+net--a<23> =	FROM( .a<23> )	TO( eor-13.in1 ) ;
+net--a<24> =	FROM( .a<24> )	TO( eor-12.in1 ) ;
+net--a<25> =	FROM( .a<25> )	TO( eor-11.in1 ) ;
+net--a<26> =	FROM( .a<26> )	TO( eor-10.in1 ) ;
+net--a<27> =	FROM( .a<27> )	TO( eor-9.in1 ) ;
+net--a<28> =	FROM( .a<28> )	TO( eor-8.in1 ) ;
+net--a<29> =	FROM( .a<29> )	TO( eor-7.in1 ) ;
+net--a<30> =	FROM( .a<30> )	TO( eor-6.in1 ) ;
+net--a<31> =	FROM( .a<31> )	TO( eor-5.in1 ) ;
+"***** bus *****"
+"***** selecter *****"
+net-sel-1-out<31:0> =	FROM( sel-1.out<31:0> )	TO( .out<31:0> ) ;
+net-adder-sum<31:0> =	FROM( adder.sum<31:0> )	TO( sel-1.in1<31:0> ) ;
+net-nand-1-nout =	FROM( nand-1.nout )	TO( sel-1.sel1 ) ;
+net-nor-66-nout =	FROM( nor-66.nout )	TO( sel-1.in2<31> ) ;
+net-nor-64-nout =	FROM( nor-64.nout )	TO( sel-1.in2<30> ) ;
+net-nor-62-nout =	FROM( nor-62.nout )	TO( sel-1.in2<29> ) ;
+net-nor-60-nout =	FROM( nor-60.nout )	TO( sel-1.in2<28> ) ;
+net-nor-58-nout =	FROM( nor-58.nout )	TO( sel-1.in2<27> ) ;
+net-nor-56-nout =	FROM( nor-56.nout )	TO( sel-1.in2<26> ) ;
+net-nor-54-nout =	FROM( nor-54.nout )	TO( sel-1.in2<25> ) ;
+net-nor-52-nout =	FROM( nor-52.nout )	TO( sel-1.in2<24> ) ;
+net-nor-50-nout =	FROM( nor-50.nout )	TO( sel-1.in2<23> ) ;
+net-nor-48-nout =	FROM( nor-48.nout )	TO( sel-1.in2<22> ) ;
+net-nor-46-nout =	FROM( nor-46.nout )	TO( sel-1.in2<21> ) ;
+net-nor-44-nout =	FROM( nor-44.nout )	TO( sel-1.in2<20> ) ;
+net-nor-42-nout =	FROM( nor-42.nout )	TO( sel-1.in2<19> ) ;
+net-nor-40-nout =	FROM( nor-40.nout )	TO( sel-1.in2<18> ) ;
+net-nor-38-nout =	FROM( nor-38.nout )	TO( sel-1.in2<17> ) ;
+net-nor-36-nout =	FROM( nor-36.nout )	TO( sel-1.in2<16> ) ;
+net-nor-34-nout =	FROM( nor-34.nout )	TO( sel-1.in2<15> ) ;
+net-nor-32-nout =	FROM( nor-32.nout )	TO( sel-1.in2<14> ) ;
+net-nor-30-nout =	FROM( nor-30.nout )	TO( sel-1.in2<13> ) ;
+net-nor-28-nout =	FROM( nor-28.nout )	TO( sel-1.in2<12> ) ;
+net-nor-26-nout =	FROM( nor-26.nout )	TO( sel-1.in2<11> ) ;
+net-nor-24-nout =	FROM( nor-24.nout )	TO( sel-1.in2<10> ) ;
+net-nor-22-nout =	FROM( nor-22.nout )	TO( sel-1.in2<9> ) ;
+net-nor-20-nout =	FROM( nor-20.nout )	TO( sel-1.in2<8> ) ;
+net-nor-18-nout =	FROM( nor-18.nout )	TO( sel-1.in2<7> ) ;
+net-nor-16-nout =	FROM( nor-16.nout )	TO( sel-1.in2<6> ) ;
+net-nor-14-nout =	FROM( nor-14.nout )	TO( sel-1.in2<5> ) ;
+net-nor-12-nout =	FROM( nor-12.nout )	TO( sel-1.in2<4> ) ;
+net-nor-10-nout =	FROM( nor-10.nout )	TO( sel-1.in2<3> ) ;
+net-nor-8-nout =	FROM( nor-8.nout )	TO( sel-1.in2<2> ) ;
+net-nor-6-nout =	FROM( nor-6.nout )	TO( sel-1.in2<1> ) ;
+net-nor-4-nout =	FROM( nor-4.nout )	TO( sel-1.in2<0> ) ;
+net--op_and =	FROM( .op_and )	TO( sel-1.sel2 ) ;
+net-nand-33-nout =	FROM( nand-33.nout )	TO( sel-1.in3<31> ) ;
+net-nand-32-nout =	FROM( nand-32.nout )	TO( sel-1.in3<30> ) ;
+net-nand-31-nout =	FROM( nand-31.nout )	TO( sel-1.in3<29> ) ;
+net-nand-30-nout =	FROM( nand-30.nout )	TO( sel-1.in3<28> ) ;
+net-nand-29-nout =	FROM( nand-29.nout )	TO( sel-1.in3<27> ) ;
+net-nand-28-nout =	FROM( nand-28.nout )	TO( sel-1.in3<26> ) ;
+net-nand-27-nout =	FROM( nand-27.nout )	TO( sel-1.in3<25> ) ;
+net-nand-26-nout =	FROM( nand-26.nout )	TO( sel-1.in3<24> ) ;
+net-nand-25-nout =	FROM( nand-25.nout )	TO( sel-1.in3<23> ) ;
+net-nand-24-nout =	FROM( nand-24.nout )	TO( sel-1.in3<22> ) ;
+net-nand-23-nout =	FROM( nand-23.nout )	TO( sel-1.in3<21> ) ;
+net-nand-22-nout =	FROM( nand-22.nout )	TO( sel-1.in3<20> ) ;
+net-nand-21-nout =	FROM( nand-21.nout )	TO( sel-1.in3<19> ) ;
+net-nand-20-nout =	FROM( nand-20.nout )	TO( sel-1.in3<18> ) ;
+net-nand-19-nout =	FROM( nand-19.nout )	TO( sel-1.in3<17> ) ;
+net-nand-18-nout =	FROM( nand-18.nout )	TO( sel-1.in3<16> ) ;
+net-nand-17-nout =	FROM( nand-17.nout )	TO( sel-1.in3<15> ) ;
+net-nand-16-nout =	FROM( nand-16.nout )	TO( sel-1.in3<14> ) ;
+net-nand-15-nout =	FROM( nand-15.nout )	TO( sel-1.in3<13> ) ;
+net-nand-14-nout =	FROM( nand-14.nout )	TO( sel-1.in3<12> ) ;
+net-nand-13-nout =	FROM( nand-13.nout )	TO( sel-1.in3<11> ) ;
+net-nand-12-nout =	FROM( nand-12.nout )	TO( sel-1.in3<10> ) ;
+net-nand-11-nout =	FROM( nand-11.nout )	TO( sel-1.in3<9> ) ;
+net-nand-10-nout =	FROM( nand-10.nout )	TO( sel-1.in3<8> ) ;
+net-nand-9-nout =	FROM( nand-9.nout )	TO( sel-1.in3<7> ) ;
+net-nand-8-nout =	FROM( nand-8.nout )	TO( sel-1.in3<6> ) ;
+net-nand-7-nout =	FROM( nand-7.nout )	TO( sel-1.in3<5> ) ;
+net-nand-6-nout =	FROM( nand-6.nout )	TO( sel-1.in3<4> ) ;
+net-nand-5-nout =	FROM( nand-5.nout )	TO( sel-1.in3<3> ) ;
+net-nand-4-nout =	FROM( nand-4.nout )	TO( sel-1.in3<2> ) ;
+net-nand-3-nout =	FROM( nand-3.nout )	TO( sel-1.in3<1> ) ;
+net-nand-2-nout =	FROM( nand-2.nout )	TO( sel-1.in3<0> ) ;
+net--op_or =	FROM( .op_or )	TO( sel-1.sel3 ) ;
+net-eor-5-out =	FROM( eor-5.out )	TO( sel-1.in4<31> ) ;
+net-eor-6-out =	FROM( eor-6.out )	TO( sel-1.in4<30> ) ;
+net-eor-7-out =	FROM( eor-7.out )	TO( sel-1.in4<29> ) ;
+net-eor-8-out =	FROM( eor-8.out )	TO( sel-1.in4<28> ) ;
+net-eor-9-out =	FROM( eor-9.out )	TO( sel-1.in4<27> ) ;
+net-eor-10-out =	FROM( eor-10.out )	TO( sel-1.in4<26> ) ;
+net-eor-11-out =	FROM( eor-11.out )	TO( sel-1.in4<25> ) ;
+net-eor-12-out =	FROM( eor-12.out )	TO( sel-1.in4<24> ) ;
+net-eor-13-out =	FROM( eor-13.out )	TO( sel-1.in4<23> ) ;
+net-eor-14-out =	FROM( eor-14.out )	TO( sel-1.in4<22> ) ;
+net-eor-15-out =	FROM( eor-15.out )	TO( sel-1.in4<21> ) ;
+net-eor-16-out =	FROM( eor-16.out )	TO( sel-1.in4<20> ) ;
+net-eor-17-out =	FROM( eor-17.out )	TO( sel-1.in4<19> ) ;
+net-eor-18-out =	FROM( eor-18.out )	TO( sel-1.in4<18> ) ;
+net-eor-19-out =	FROM( eor-19.out )	TO( sel-1.in4<17> ) ;
+net-eor-20-out =	FROM( eor-20.out )	TO( sel-1.in4<16> ) ;
+net-eor-21-out =	FROM( eor-21.out )	TO( sel-1.in4<15> ) ;
+net-eor-22-out =	FROM( eor-22.out )	TO( sel-1.in4<14> ) ;
+net-eor-23-out =	FROM( eor-23.out )	TO( sel-1.in4<13> ) ;
+net-eor-24-out =	FROM( eor-24.out )	TO( sel-1.in4<12> ) ;
+net-eor-25-out =	FROM( eor-25.out )	TO( sel-1.in4<11> ) ;
+net-eor-26-out =	FROM( eor-26.out )	TO( sel-1.in4<10> ) ;
+net-eor-27-out =	FROM( eor-27.out )	TO( sel-1.in4<9> ) ;
+net-eor-28-out =	FROM( eor-28.out )	TO( sel-1.in4<8> ) ;
+net-eor-29-out =	FROM( eor-29.out )	TO( sel-1.in4<7> ) ;
+net-eor-30-out =	FROM( eor-30.out )	TO( sel-1.in4<6> ) ;
+net-eor-31-out =	FROM( eor-31.out )	TO( sel-1.in4<5> ) ;
+net-eor-32-out =	FROM( eor-32.out )	TO( sel-1.in4<4> ) ;
+net-eor-33-out =	FROM( eor-33.out )	TO( sel-1.in4<3> ) ;
+net-eor-34-out =	FROM( eor-34.out )	TO( sel-1.in4<2> ) ;
+net-eor-35-out =	FROM( eor-35.out )	TO( sel-1.in4<1> ) ;
+net-eor-36-out =	FROM( eor-36.out )	TO( sel-1.in4<0> ) ;
+net--op_xor =	FROM( .op_xor )	TO( sel-1.sel4 ) ;
+net-nor-65-nout =	FROM( nor-65.nout )	TO( sel-1.in5<31> ) ;
+net-nor-63-nout =	FROM( nor-63.nout )	TO( sel-1.in5<30> ) ;
+net-nor-61-nout =	FROM( nor-61.nout )	TO( sel-1.in5<29> ) ;
+net-nor-59-nout =	FROM( nor-59.nout )	TO( sel-1.in5<28> ) ;
+net-nor-57-nout =	FROM( nor-57.nout )	TO( sel-1.in5<27> ) ;
+net-nor-55-nout =	FROM( nor-55.nout )	TO( sel-1.in5<26> ) ;
+net-nor-53-nout =	FROM( nor-53.nout )	TO( sel-1.in5<25> ) ;
+net-nor-51-nout =	FROM( nor-51.nout )	TO( sel-1.in5<24> ) ;
+net-nor-49-nout =	FROM( nor-49.nout )	TO( sel-1.in5<23> ) ;
+net-nor-47-nout =	FROM( nor-47.nout )	TO( sel-1.in5<22> ) ;
+net-nor-45-nout =	FROM( nor-45.nout )	TO( sel-1.in5<21> ) ;
+net-nor-43-nout =	FROM( nor-43.nout )	TO( sel-1.in5<20> ) ;
+net-nor-41-nout =	FROM( nor-41.nout )	TO( sel-1.in5<19> ) ;
+net-nor-39-nout =	FROM( nor-39.nout )	TO( sel-1.in5<18> ) ;
+net-nor-37-nout =	FROM( nor-37.nout )	TO( sel-1.in5<17> ) ;
+net-nor-35-nout =	FROM( nor-35.nout )	TO( sel-1.in5<16> ) ;
+net-nor-33-nout =	FROM( nor-33.nout )	TO( sel-1.in5<15> ) ;
+net-nor-31-nout =	FROM( nor-31.nout )	TO( sel-1.in5<14> ) ;
+net-nor-29-nout =	FROM( nor-29.nout )	TO( sel-1.in5<13> ) ;
+net-nor-27-nout =	FROM( nor-27.nout )	TO( sel-1.in5<12> ) ;
+net-nor-25-nout =	FROM( nor-25.nout )	TO( sel-1.in5<11> ) ;
+net-nor-23-nout =	FROM( nor-23.nout )	TO( sel-1.in5<10> ) ;
+net-nor-21-nout =	FROM( nor-21.nout )	TO( sel-1.in5<9> ) ;
+net-nor-19-nout =	FROM( nor-19.nout )	TO( sel-1.in5<8> ) ;
+net-nor-17-nout =	FROM( nor-17.nout )	TO( sel-1.in5<7> ) ;
+net-nor-15-nout =	FROM( nor-15.nout )	TO( sel-1.in5<6> ) ;
+net-nor-13-nout =	FROM( nor-13.nout )	TO( sel-1.in5<5> ) ;
+net-nor-11-nout =	FROM( nor-11.nout )	TO( sel-1.in5<4> ) ;
+net-nor-9-nout =	FROM( nor-9.nout )	TO( sel-1.in5<3> ) ;
+net-nor-7-nout =	FROM( nor-7.nout )	TO( sel-1.in5<2> ) ;
+net-nor-5-nout =	FROM( nor-5.nout )	TO( sel-1.in5<1> ) ;
+net-nor-3-nout =	FROM( nor-3.nout )	TO( sel-1.in5<0> ) ;
+net--op_nor =	FROM( .op_nor )	TO( sel-1.sel5 ) ;
+net-sel-2-out =	FROM( sel-2.out )	TO( .overflow ) ;
+net-nor-67-nout =	FROM( nor-67.nout )	TO( sel-2.in1 ) ;
+net--op_add =	FROM( .op_add )	TO( sel-2.sel1 ) ;
+net-nor-2-nout =	FROM( nor-2.nout )	TO( sel-2.in2 ) ;
+net--op_sub =	FROM( .op_sub )	TO( sel-2.sel2 ) ;
+net-sel-3-out<31:0> =	FROM( sel-3.out<31:0> )	TO( adder.b<31:0> ) ;
+net--b<31:0> =	FROM( .b<31:0> )	TO( sel-3.in1<31:0> ) ;
+net--op_add =	FROM( .op_add )	TO( sel-3.sel1 ) ;
+net-inv-66-nout =	FROM( inv-66.nout )	TO( sel-3.in2<31> ) ;
+net-inv-64-nout =	FROM( inv-64.nout )	TO( sel-3.in2<30> ) ;
+net-inv-62-nout =	FROM( inv-62.nout )	TO( sel-3.in2<29> ) ;
+net-inv-60-nout =	FROM( inv-60.nout )	TO( sel-3.in2<28> ) ;
+net-inv-58-nout =	FROM( inv-58.nout )	TO( sel-3.in2<27> ) ;
+net-inv-56-nout =	FROM( inv-56.nout )	TO( sel-3.in2<26> ) ;
+net-inv-54-nout =	FROM( inv-54.nout )	TO( sel-3.in2<25> ) ;
+net-inv-52-nout =	FROM( inv-52.nout )	TO( sel-3.in2<24> ) ;
+net-inv-50-nout =	FROM( inv-50.nout )	TO( sel-3.in2<23> ) ;
+net-inv-48-nout =	FROM( inv-48.nout )	TO( sel-3.in2<22> ) ;
+net-inv-46-nout =	FROM( inv-46.nout )	TO( sel-3.in2<21> ) ;
+net-inv-44-nout =	FROM( inv-44.nout )	TO( sel-3.in2<20> ) ;
+net-inv-42-nout =	FROM( inv-42.nout )	TO( sel-3.in2<19> ) ;
+net-inv-40-nout =	FROM( inv-40.nout )	TO( sel-3.in2<18> ) ;
+net-inv-38-nout =	FROM( inv-38.nout )	TO( sel-3.in2<17> ) ;
+net-inv-36-nout =	FROM( inv-36.nout )	TO( sel-3.in2<16> ) ;
+net-inv-34-nout =	FROM( inv-34.nout )	TO( sel-3.in2<15> ) ;
+net-inv-32-nout =	FROM( inv-32.nout )	TO( sel-3.in2<14> ) ;
+net-inv-30-nout =	FROM( inv-30.nout )	TO( sel-3.in2<13> ) ;
+net-inv-28-nout =	FROM( inv-28.nout )	TO( sel-3.in2<12> ) ;
+net-inv-26-nout =	FROM( inv-26.nout )	TO( sel-3.in2<11> ) ;
+net-inv-24-nout =	FROM( inv-24.nout )	TO( sel-3.in2<10> ) ;
+net-inv-22-nout =	FROM( inv-22.nout )	TO( sel-3.in2<9> ) ;
+net-inv-20-nout =	FROM( inv-20.nout )	TO( sel-3.in2<8> ) ;
+net-inv-18-nout =	FROM( inv-18.nout )	TO( sel-3.in2<7> ) ;
+net-inv-16-nout =	FROM( inv-16.nout )	TO( sel-3.in2<6> ) ;
+net-inv-14-nout =	FROM( inv-14.nout )	TO( sel-3.in2<5> ) ;
+net-inv-12-nout =	FROM( inv-12.nout )	TO( sel-3.in2<4> ) ;
+net-inv-10-nout =	FROM( inv-10.nout )	TO( sel-3.in2<3> ) ;
+net-inv-8-nout =	FROM( inv-8.nout )	TO( sel-3.in2<2> ) ;
+net-inv-6-nout =	FROM( inv-6.nout )	TO( sel-3.in2<1> ) ;
+net-inv-4-nout =	FROM( inv-4.nout )	TO( sel-3.in2<0> ) ;
+net--op_sub =	FROM( .op_sub )	TO( sel-3.sel2 ) ;
+net-sel-4-out =	FROM( sel-4.out )	TO( adder.cin ) ;
+net-low--nout =	FROM( low-.nout )	TO( sel-4.in1 ) ;
+net--op_add =	FROM( .op_add )	TO( sel-4.sel1 ) ;
+net-high--out =	FROM( high-.out )	TO( sel-4.in2 ) ;
+net--op_sub =	FROM( .op_sub )	TO( sel-4.sel2 ) ;
+"***** or *****"
+net-nand-34-nout =	FROM( nand-34.nout )	TO( nor-1.in1 ) ;
+net-nand-35-nout =	FROM( nand-35.nout )	TO( nor-1.in2 ) ;
+net-nand-36-nout =	FROM( nand-36.nout )	TO( nor-1.in3 ) ;
+net-nand-37-nout =	FROM( nand-37.nout )	TO( nor-1.in4 ) ;
+net-inv-99-nout =	FROM( inv-99.nout )	TO( nor-2.in1 ) ;
+net-eor-4-out =	FROM( eor-4.out )	TO( nor-2.in2 ) ;
+net--a<0> =	FROM( .a<0> )	TO( nor-3.in1 ) ;
+net--b<0> =	FROM( .b<0> )	TO( nor-3.in2 ) ;
+net-inv-3-nout =	FROM( inv-3.nout )	TO( nor-4.in1 ) ;
+net-inv-4-nout =	FROM( inv-4.nout )	TO( nor-4.in2 ) ;
+net--a<1> =	FROM( .a<1> )	TO( nor-5.in1 ) ;
+net--b<1> =	FROM( .b<1> )	TO( nor-5.in2 ) ;
+net-inv-5-nout =	FROM( inv-5.nout )	TO( nor-6.in1 ) ;
+net-inv-6-nout =	FROM( inv-6.nout )	TO( nor-6.in2 ) ;
+net--a<2> =	FROM( .a<2> )	TO( nor-7.in1 ) ;
+net--b<2> =	FROM( .b<2> )	TO( nor-7.in2 ) ;
+net-inv-7-nout =	FROM( inv-7.nout )	TO( nor-8.in1 ) ;
+net-inv-8-nout =	FROM( inv-8.nout )	TO( nor-8.in2 ) ;
+net--a<3> =	FROM( .a<3> )	TO( nor-9.in1 ) ;
+net--b<3> =	FROM( .b<3> )	TO( nor-9.in2 ) ;
+net-inv-9-nout =	FROM( inv-9.nout )	TO( nor-10.in1 ) ;
+net-inv-10-nout =	FROM( inv-10.nout )	TO( nor-10.in2 ) ;
+net--a<4> =	FROM( .a<4> )	TO( nor-11.in1 ) ;
+net--b<4> =	FROM( .b<4> )	TO( nor-11.in2 ) ;
+net-inv-11-nout =	FROM( inv-11.nout )	TO( nor-12.in1 ) ;
+net-inv-12-nout =	FROM( inv-12.nout )	TO( nor-12.in2 ) ;
+net--a<5> =	FROM( .a<5> )	TO( nor-13.in1 ) ;
+net--b<5> =	FROM( .b<5> )	TO( nor-13.in2 ) ;
+net-inv-13-nout =	FROM( inv-13.nout )	TO( nor-14.in1 ) ;
+net-inv-14-nout =	FROM( inv-14.nout )	TO( nor-14.in2 ) ;
+net--a<6> =	FROM( .a<6> )	TO( nor-15.in1 ) ;
+net--b<6> =	FROM( .b<6> )	TO( nor-15.in2 ) ;
+net-inv-15-nout =	FROM( inv-15.nout )	TO( nor-16.in1 ) ;
+net-inv-16-nout =	FROM( inv-16.nout )	TO( nor-16.in2 ) ;
+net--a<7> =	FROM( .a<7> )	TO( nor-17.in1 ) ;
+net--b<7> =	FROM( .b<7> )	TO( nor-17.in2 ) ;
+net-inv-17-nout =	FROM( inv-17.nout )	TO( nor-18.in1 ) ;
+net-inv-18-nout =	FROM( inv-18.nout )	TO( nor-18.in2 ) ;
+net--a<8> =	FROM( .a<8> )	TO( nor-19.in1 ) ;
+net--b<8> =	FROM( .b<8> )	TO( nor-19.in2 ) ;
+net-inv-19-nout =	FROM( inv-19.nout )	TO( nor-20.in1 ) ;
+net-inv-20-nout =	FROM( inv-20.nout )	TO( nor-20.in2 ) ;
+net--a<9> =	FROM( .a<9> )	TO( nor-21.in1 ) ;
+net--b<9> =	FROM( .b<9> )	TO( nor-21.in2 ) ;
+net-inv-21-nout =	FROM( inv-21.nout )	TO( nor-22.in1 ) ;
+net-inv-22-nout =	FROM( inv-22.nout )	TO( nor-22.in2 ) ;
+net--a<10> =	FROM( .a<10> )	TO( nor-23.in1 ) ;
+net--b<10> =	FROM( .b<10> )	TO( nor-23.in2 ) ;
+net-inv-23-nout =	FROM( inv-23.nout )	TO( nor-24.in1 ) ;
+net-inv-24-nout =	FROM( inv-24.nout )	TO( nor-24.in2 ) ;
+net--a<11> =	FROM( .a<11> )	TO( nor-25.in1 ) ;
+net--b<11> =	FROM( .b<11> )	TO( nor-25.in2 ) ;
+net-inv-25-nout =	FROM( inv-25.nout )	TO( nor-26.in1 ) ;
+net-inv-26-nout =	FROM( inv-26.nout )	TO( nor-26.in2 ) ;
+net--a<12> =	FROM( .a<12> )	TO( nor-27.in1 ) ;
+net--b<12> =	FROM( .b<12> )	TO( nor-27.in2 ) ;
+net-inv-27-nout =	FROM( inv-27.nout )	TO( nor-28.in1 ) ;
+net-inv-28-nout =	FROM( inv-28.nout )	TO( nor-28.in2 ) ;
+net--a<13> =	FROM( .a<13> )	TO( nor-29.in1 ) ;
+net--b<13> =	FROM( .b<13> )	TO( nor-29.in2 ) ;
+net-inv-29-nout =	FROM( inv-29.nout )	TO( nor-30.in1 ) ;
+net-inv-30-nout =	FROM( inv-30.nout )	TO( nor-30.in2 ) ;
+net--a<14> =	FROM( .a<14> )	TO( nor-31.in1 ) ;
+net--b<14> =	FROM( .b<14> )	TO( nor-31.in2 ) ;
+net-inv-31-nout =	FROM( inv-31.nout )	TO( nor-32.in1 ) ;
+net-inv-32-nout =	FROM( inv-32.nout )	TO( nor-32.in2 ) ;
+net--a<15> =	FROM( .a<15> )	TO( nor-33.in1 ) ;
+net--b<15> =	FROM( .b<15> )	TO( nor-33.in2 ) ;
+net-inv-33-nout =	FROM( inv-33.nout )	TO( nor-34.in1 ) ;
+net-inv-34-nout =	FROM( inv-34.nout )	TO( nor-34.in2 ) ;
+net--a<16> =	FROM( .a<16> )	TO( nor-35.in1 ) ;
+net--b<16> =	FROM( .b<16> )	TO( nor-35.in2 ) ;
+net-inv-35-nout =	FROM( inv-35.nout )	TO( nor-36.in1 ) ;
+net-inv-36-nout =	FROM( inv-36.nout )	TO( nor-36.in2 ) ;
+net--a<17> =	FROM( .a<17> )	TO( nor-37.in1 ) ;
+net--b<17> =	FROM( .b<17> )	TO( nor-37.in2 ) ;
+net-inv-37-nout =	FROM( inv-37.nout )	TO( nor-38.in1 ) ;
+net-inv-38-nout =	FROM( inv-38.nout )	TO( nor-38.in2 ) ;
+net--a<18> =	FROM( .a<18> )	TO( nor-39.in1 ) ;
+net--b<18> =	FROM( .b<18> )	TO( nor-39.in2 ) ;
+net-inv-39-nout =	FROM( inv-39.nout )	TO( nor-40.in1 ) ;
+net-inv-40-nout =	FROM( inv-40.nout )	TO( nor-40.in2 ) ;
+net--a<19> =	FROM( .a<19> )	TO( nor-41.in1 ) ;
+net--b<19> =	FROM( .b<19> )	TO( nor-41.in2 ) ;
+net-inv-41-nout =	FROM( inv-41.nout )	TO( nor-42.in1 ) ;
+net-inv-42-nout =	FROM( inv-42.nout )	TO( nor-42.in2 ) ;
+net--a<20> =	FROM( .a<20> )	TO( nor-43.in1 ) ;
+net--b<20> =	FROM( .b<20> )	TO( nor-43.in2 ) ;
+net-inv-43-nout =	FROM( inv-43.nout )	TO( nor-44.in1 ) ;
+net-inv-44-nout =	FROM( inv-44.nout )	TO( nor-44.in2 ) ;
+net--a<21> =	FROM( .a<21> )	TO( nor-45.in1 ) ;
+net--b<21> =	FROM( .b<21> )	TO( nor-45.in2 ) ;
+net-inv-45-nout =	FROM( inv-45.nout )	TO( nor-46.in1 ) ;
+net-inv-46-nout =	FROM( inv-46.nout )	TO( nor-46.in2 ) ;
+net--a<22> =	FROM( .a<22> )	TO( nor-47.in1 ) ;
+net--b<22> =	FROM( .b<22> )	TO( nor-47.in2 ) ;
+net-inv-47-nout =	FROM( inv-47.nout )	TO( nor-48.in1 ) ;
+net-inv-48-nout =	FROM( inv-48.nout )	TO( nor-48.in2 ) ;
+net--a<23> =	FROM( .a<23> )	TO( nor-49.in1 ) ;
+net--b<23> =	FROM( .b<23> )	TO( nor-49.in2 ) ;
+net-inv-49-nout =	FROM( inv-49.nout )	TO( nor-50.in1 ) ;
+net-inv-50-nout =	FROM( inv-50.nout )	TO( nor-50.in2 ) ;
+net--a<24> =	FROM( .a<24> )	TO( nor-51.in1 ) ;
+net--b<24> =	FROM( .b<24> )	TO( nor-51.in2 ) ;
+net-inv-51-nout =	FROM( inv-51.nout )	TO( nor-52.in1 ) ;
+net-inv-52-nout =	FROM( inv-52.nout )	TO( nor-52.in2 ) ;
+net--a<25> =	FROM( .a<25> )	TO( nor-53.in1 ) ;
+net--b<25> =	FROM( .b<25> )	TO( nor-53.in2 ) ;
+net-inv-53-nout =	FROM( inv-53.nout )	TO( nor-54.in1 ) ;
+net-inv-54-nout =	FROM( inv-54.nout )	TO( nor-54.in2 ) ;
+net--a<26> =	FROM( .a<26> )	TO( nor-55.in1 ) ;
+net--b<26> =	FROM( .b<26> )	TO( nor-55.in2 ) ;
+net-inv-55-nout =	FROM( inv-55.nout )	TO( nor-56.in1 ) ;
+net-inv-56-nout =	FROM( inv-56.nout )	TO( nor-56.in2 ) ;
+net--a<27> =	FROM( .a<27> )	TO( nor-57.in1 ) ;
+net--b<27> =	FROM( .b<27> )	TO( nor-57.in2 ) ;
+net-inv-57-nout =	FROM( inv-57.nout )	TO( nor-58.in1 ) ;
+net-inv-58-nout =	FROM( inv-58.nout )	TO( nor-58.in2 ) ;
+net--a<28> =	FROM( .a<28> )	TO( nor-59.in1 ) ;
+net--b<28> =	FROM( .b<28> )	TO( nor-59.in2 ) ;
+net-inv-59-nout =	FROM( inv-59.nout )	TO( nor-60.in1 ) ;
+net-inv-60-nout =	FROM( inv-60.nout )	TO( nor-60.in2 ) ;
+net--a<29> =	FROM( .a<29> )	TO( nor-61.in1 ) ;
+net--b<29> =	FROM( .b<29> )	TO( nor-61.in2 ) ;
+net-inv-61-nout =	FROM( inv-61.nout )	TO( nor-62.in1 ) ;
+net-inv-62-nout =	FROM( inv-62.nout )	TO( nor-62.in2 ) ;
+net--a<30> =	FROM( .a<30> )	TO( nor-63.in1 ) ;
+net--b<30> =	FROM( .b<30> )	TO( nor-63.in2 ) ;
+net-inv-63-nout =	FROM( inv-63.nout )	TO( nor-64.in1 ) ;
+net-inv-64-nout =	FROM( inv-64.nout )	TO( nor-64.in2 ) ;
+net--a<31> =	FROM( .a<31> )	TO( nor-65.in1 ) ;
+net--b<31> =	FROM( .b<31> )	TO( nor-65.in2 ) ;
+net-inv-65-nout =	FROM( inv-65.nout )	TO( nor-66.in1 ) ;
+net-inv-66-nout =	FROM( inv-66.nout )	TO( nor-66.in2 ) ;
+net-eor-1-out =	FROM( eor-1.out )	TO( nor-67.in1 ) ;
+net-inv-100-nout =	FROM( inv-100.nout )	TO( nor-67.in2 ) ;
+"***** and *****"
+net-inv-1-nout =	FROM( inv-1.nout )	TO( nand-1.in1 ) ;
+net-inv-2-nout =	FROM( inv-2.nout )	TO( nand-1.in2 ) ;
+net-inv-3-nout =	FROM( inv-3.nout )	TO( nand-2.in1 ) ;
+net-inv-4-nout =	FROM( inv-4.nout )	TO( nand-2.in2 ) ;
+net-inv-5-nout =	FROM( inv-5.nout )	TO( nand-3.in1 ) ;
+net-inv-6-nout =	FROM( inv-6.nout )	TO( nand-3.in2 ) ;
+net-inv-7-nout =	FROM( inv-7.nout )	TO( nand-4.in1 ) ;
+net-inv-8-nout =	FROM( inv-8.nout )	TO( nand-4.in2 ) ;
+net-inv-9-nout =	FROM( inv-9.nout )	TO( nand-5.in1 ) ;
+net-inv-10-nout =	FROM( inv-10.nout )	TO( nand-5.in2 ) ;
+net-inv-11-nout =	FROM( inv-11.nout )	TO( nand-6.in1 ) ;
+net-inv-12-nout =	FROM( inv-12.nout )	TO( nand-6.in2 ) ;
+net-inv-13-nout =	FROM( inv-13.nout )	TO( nand-7.in1 ) ;
+net-inv-14-nout =	FROM( inv-14.nout )	TO( nand-7.in2 ) ;
+net-inv-15-nout =	FROM( inv-15.nout )	TO( nand-8.in1 ) ;
+net-inv-16-nout =	FROM( inv-16.nout )	TO( nand-8.in2 ) ;
+net-inv-17-nout =	FROM( inv-17.nout )	TO( nand-9.in1 ) ;
+net-inv-18-nout =	FROM( inv-18.nout )	TO( nand-9.in2 ) ;
+net-inv-19-nout =	FROM( inv-19.nout )	TO( nand-10.in1 ) ;
+net-inv-20-nout =	FROM( inv-20.nout )	TO( nand-10.in2 ) ;
+net-inv-21-nout =	FROM( inv-21.nout )	TO( nand-11.in1 ) ;
+net-inv-22-nout =	FROM( inv-22.nout )	TO( nand-11.in2 ) ;
+net-inv-23-nout =	FROM( inv-23.nout )	TO( nand-12.in1 ) ;
+net-inv-24-nout =	FROM( inv-24.nout )	TO( nand-12.in2 ) ;
+net-inv-25-nout =	FROM( inv-25.nout )	TO( nand-13.in1 ) ;
+net-inv-26-nout =	FROM( inv-26.nout )	TO( nand-13.in2 ) ;
+net-inv-27-nout =	FROM( inv-27.nout )	TO( nand-14.in1 ) ;
+net-inv-28-nout =	FROM( inv-28.nout )	TO( nand-14.in2 ) ;
+net-inv-29-nout =	FROM( inv-29.nout )	TO( nand-15.in1 ) ;
+net-inv-30-nout =	FROM( inv-30.nout )	TO( nand-15.in2 ) ;
+net-inv-31-nout =	FROM( inv-31.nout )	TO( nand-16.in1 ) ;
+net-inv-32-nout =	FROM( inv-32.nout )	TO( nand-16.in2 ) ;
+net-inv-33-nout =	FROM( inv-33.nout )	TO( nand-17.in1 ) ;
+net-inv-34-nout =	FROM( inv-34.nout )	TO( nand-17.in2 ) ;
+net-inv-35-nout =	FROM( inv-35.nout )	TO( nand-18.in1 ) ;
+net-inv-36-nout =	FROM( inv-36.nout )	TO( nand-18.in2 ) ;
+net-inv-37-nout =	FROM( inv-37.nout )	TO( nand-19.in1 ) ;
+net-inv-38-nout =	FROM( inv-38.nout )	TO( nand-19.in2 ) ;
+net-inv-39-nout =	FROM( inv-39.nout )	TO( nand-20.in1 ) ;
+net-inv-40-nout =	FROM( inv-40.nout )	TO( nand-20.in2 ) ;
+net-inv-41-nout =	FROM( inv-41.nout )	TO( nand-21.in1 ) ;
+net-inv-42-nout =	FROM( inv-42.nout )	TO( nand-21.in2 ) ;
+net-inv-43-nout =	FROM( inv-43.nout )	TO( nand-22.in1 ) ;
+net-inv-44-nout =	FROM( inv-44.nout )	TO( nand-22.in2 ) ;
+net-inv-45-nout =	FROM( inv-45.nout )	TO( nand-23.in1 ) ;
+net-inv-46-nout =	FROM( inv-46.nout )	TO( nand-23.in2 ) ;
+net-inv-47-nout =	FROM( inv-47.nout )	TO( nand-24.in1 ) ;
+net-inv-48-nout =	FROM( inv-48.nout )	TO( nand-24.in2 ) ;
+net-inv-49-nout =	FROM( inv-49.nout )	TO( nand-25.in1 ) ;
+net-inv-50-nout =	FROM( inv-50.nout )	TO( nand-25.in2 ) ;
+net-inv-51-nout =	FROM( inv-51.nout )	TO( nand-26.in1 ) ;
+net-inv-52-nout =	FROM( inv-52.nout )	TO( nand-26.in2 ) ;
+net-inv-53-nout =	FROM( inv-53.nout )	TO( nand-27.in1 ) ;
+net-inv-54-nout =	FROM( inv-54.nout )	TO( nand-27.in2 ) ;
+net-inv-55-nout =	FROM( inv-55.nout )	TO( nand-28.in1 ) ;
+net-inv-56-nout =	FROM( inv-56.nout )	TO( nand-28.in2 ) ;
+net-inv-57-nout =	FROM( inv-57.nout )	TO( nand-29.in1 ) ;
+net-inv-58-nout =	FROM( inv-58.nout )	TO( nand-29.in2 ) ;
+net-inv-59-nout =	FROM( inv-59.nout )	TO( nand-30.in1 ) ;
+net-inv-60-nout =	FROM( inv-60.nout )	TO( nand-30.in2 ) ;
+net-inv-61-nout =	FROM( inv-61.nout )	TO( nand-31.in1 ) ;
+net-inv-62-nout =	FROM( inv-62.nout )	TO( nand-31.in2 ) ;
+net-inv-63-nout =	FROM( inv-63.nout )	TO( nand-32.in1 ) ;
+net-inv-64-nout =	FROM( inv-64.nout )	TO( nand-32.in2 ) ;
+net-inv-65-nout =	FROM( inv-65.nout )	TO( nand-33.in1 ) ;
+net-inv-66-nout =	FROM( inv-66.nout )	TO( nand-33.in2 ) ;
+net-inv-67-nout =	FROM( inv-67.nout )	TO( nand-34.in1 ) ;
+net-inv-68-nout =	FROM( inv-68.nout )	TO( nand-34.in2 ) ;
+net-inv-69-nout =	FROM( inv-69.nout )	TO( nand-34.in3 ) ;
+net-inv-70-nout =	FROM( inv-70.nout )	TO( nand-34.in4 ) ;
+net-inv-71-nout =	FROM( inv-71.nout )	TO( nand-34.in5 ) ;
+net-inv-72-nout =	FROM( inv-72.nout )	TO( nand-34.in6 ) ;
+net-inv-73-nout =	FROM( inv-73.nout )	TO( nand-34.in7 ) ;
+net-inv-74-nout =	FROM( inv-74.nout )	TO( nand-34.in8 ) ;
+net-inv-75-nout =	FROM( inv-75.nout )	TO( nand-35.in1 ) ;
+net-inv-76-nout =	FROM( inv-76.nout )	TO( nand-35.in2 ) ;
+net-inv-77-nout =	FROM( inv-77.nout )	TO( nand-35.in3 ) ;
+net-inv-78-nout =	FROM( inv-78.nout )	TO( nand-35.in4 ) ;
+net-inv-79-nout =	FROM( inv-79.nout )	TO( nand-35.in5 ) ;
+net-inv-80-nout =	FROM( inv-80.nout )	TO( nand-35.in6 ) ;
+net-inv-81-nout =	FROM( inv-81.nout )	TO( nand-35.in7 ) ;
+net-inv-82-nout =	FROM( inv-82.nout )	TO( nand-35.in8 ) ;
+net-inv-83-nout =	FROM( inv-83.nout )	TO( nand-36.in1 ) ;
+net-inv-84-nout =	FROM( inv-84.nout )	TO( nand-36.in2 ) ;
+net-inv-85-nout =	FROM( inv-85.nout )	TO( nand-36.in3 ) ;
+net-inv-86-nout =	FROM( inv-86.nout )	TO( nand-36.in4 ) ;
+net-inv-87-nout =	FROM( inv-87.nout )	TO( nand-36.in5 ) ;
+net-inv-88-nout =	FROM( inv-88.nout )	TO( nand-36.in6 ) ;
+net-inv-89-nout =	FROM( inv-89.nout )	TO( nand-36.in7 ) ;
+net-inv-90-nout =	FROM( inv-90.nout )	TO( nand-36.in8 ) ;
+net-inv-91-nout =	FROM( inv-91.nout )	TO( nand-37.in1 ) ;
+net-inv-92-nout =	FROM( inv-92.nout )	TO( nand-37.in2 ) ;
+net-inv-93-nout =	FROM( inv-93.nout )	TO( nand-37.in3 ) ;
+net-inv-94-nout =	FROM( inv-94.nout )	TO( nand-37.in4 ) ;
+net-inv-95-nout =	FROM( inv-95.nout )	TO( nand-37.in5 ) ;
+net-inv-96-nout =	FROM( inv-96.nout )	TO( nand-37.in6 ) ;
+net-inv-97-nout =	FROM( inv-97.nout )	TO( nand-37.in7 ) ;
+net-inv-98-nout =	FROM( inv-98.nout )	TO( nand-37.in8 ) ;
+"***** not *****"
+net--op_add =	FROM( .op_add )	TO( inv-1.in ) ;
+net--op_sub =	FROM( .op_sub )	TO( inv-2.in ) ;
+net--a<0> =	FROM( .a<0> )	TO( inv-3.in ) ;
+net--b<0> =	FROM( .b<0> )	TO( inv-4.in ) ;
+net--a<1> =	FROM( .a<1> )	TO( inv-5.in ) ;
+net--b<1> =	FROM( .b<1> )	TO( inv-6.in ) ;
+net--a<2> =	FROM( .a<2> )	TO( inv-7.in ) ;
+net--b<2> =	FROM( .b<2> )	TO( inv-8.in ) ;
+net--a<3> =	FROM( .a<3> )	TO( inv-9.in ) ;
+net--b<3> =	FROM( .b<3> )	TO( inv-10.in ) ;
+net--a<4> =	FROM( .a<4> )	TO( inv-11.in ) ;
+net--b<4> =	FROM( .b<4> )	TO( inv-12.in ) ;
+net--a<5> =	FROM( .a<5> )	TO( inv-13.in ) ;
+net--b<5> =	FROM( .b<5> )	TO( inv-14.in ) ;
+net--a<6> =	FROM( .a<6> )	TO( inv-15.in ) ;
+net--b<6> =	FROM( .b<6> )	TO( inv-16.in ) ;
+net--a<7> =	FROM( .a<7> )	TO( inv-17.in ) ;
+net--b<7> =	FROM( .b<7> )	TO( inv-18.in ) ;
+net--a<8> =	FROM( .a<8> )	TO( inv-19.in ) ;
+net--b<8> =	FROM( .b<8> )	TO( inv-20.in ) ;
+net--a<9> =	FROM( .a<9> )	TO( inv-21.in ) ;
+net--b<9> =	FROM( .b<9> )	TO( inv-22.in ) ;
+net--a<10> =	FROM( .a<10> )	TO( inv-23.in ) ;
+net--b<10> =	FROM( .b<10> )	TO( inv-24.in ) ;
+net--a<11> =	FROM( .a<11> )	TO( inv-25.in ) ;
+net--b<11> =	FROM( .b<11> )	TO( inv-26.in ) ;
+net--a<12> =	FROM( .a<12> )	TO( inv-27.in ) ;
+net--b<12> =	FROM( .b<12> )	TO( inv-28.in ) ;
+net--a<13> =	FROM( .a<13> )	TO( inv-29.in ) ;
+net--b<13> =	FROM( .b<13> )	TO( inv-30.in ) ;
+net--a<14> =	FROM( .a<14> )	TO( inv-31.in ) ;
+net--b<14> =	FROM( .b<14> )	TO( inv-32.in ) ;
+net--a<15> =	FROM( .a<15> )	TO( inv-33.in ) ;
+net--b<15> =	FROM( .b<15> )	TO( inv-34.in ) ;
+net--a<16> =	FROM( .a<16> )	TO( inv-35.in ) ;
+net--b<16> =	FROM( .b<16> )	TO( inv-36.in ) ;
+net--a<17> =	FROM( .a<17> )	TO( inv-37.in ) ;
+net--b<17> =	FROM( .b<17> )	TO( inv-38.in ) ;
+net--a<18> =	FROM( .a<18> )	TO( inv-39.in ) ;
+net--b<18> =	FROM( .b<18> )	TO( inv-40.in ) ;
+net--a<19> =	FROM( .a<19> )	TO( inv-41.in ) ;
+net--b<19> =	FROM( .b<19> )	TO( inv-42.in ) ;
+net--a<20> =	FROM( .a<20> )	TO( inv-43.in ) ;
+net--b<20> =	FROM( .b<20> )	TO( inv-44.in ) ;
+net--a<21> =	FROM( .a<21> )	TO( inv-45.in ) ;
+net--b<21> =	FROM( .b<21> )	TO( inv-46.in ) ;
+net--a<22> =	FROM( .a<22> )	TO( inv-47.in ) ;
+net--b<22> =	FROM( .b<22> )	TO( inv-48.in ) ;
+net--a<23> =	FROM( .a<23> )	TO( inv-49.in ) ;
+net--b<23> =	FROM( .b<23> )	TO( inv-50.in ) ;
+net--a<24> =	FROM( .a<24> )	TO( inv-51.in ) ;
+net--b<24> =	FROM( .b<24> )	TO( inv-52.in ) ;
+net--a<25> =	FROM( .a<25> )	TO( inv-53.in ) ;
+net--b<25> =	FROM( .b<25> )	TO( inv-54.in ) ;
+net--a<26> =	FROM( .a<26> )	TO( inv-55.in ) ;
+net--b<26> =	FROM( .b<26> )	TO( inv-56.in ) ;
+net--a<27> =	FROM( .a<27> )	TO( inv-57.in ) ;
+net--b<27> =	FROM( .b<27> )	TO( inv-58.in ) ;
+net--a<28> =	FROM( .a<28> )	TO( inv-59.in ) ;
+net--b<28> =	FROM( .b<28> )	TO( inv-60.in ) ;
+net--a<29> =	FROM( .a<29> )	TO( inv-61.in ) ;
+net--b<29> =	FROM( .b<29> )	TO( inv-62.in ) ;
+net--a<30> =	FROM( .a<30> )	TO( inv-63.in ) ;
+net--b<30> =	FROM( .b<30> )	TO( inv-64.in ) ;
+net--a<31> =	FROM( .a<31> )	TO( inv-65.in ) ;
+net--b<31> =	FROM( .b<31> )	TO( inv-66.in ) ;
+net-adder-sum<7> =	FROM( adder.sum<7> )	TO( inv-67.in ) ;
+net-adder-sum<6> =	FROM( adder.sum<6> )	TO( inv-68.in ) ;
+net-adder-sum<5> =	FROM( adder.sum<5> )	TO( inv-69.in ) ;
+net-adder-sum<4> =	FROM( adder.sum<4> )	TO( inv-70.in ) ;
+net-adder-sum<3> =	FROM( adder.sum<3> )	TO( inv-71.in ) ;
+net-adder-sum<2> =	FROM( adder.sum<2> )	TO( inv-72.in ) ;
+net-adder-sum<1> =	FROM( adder.sum<1> )	TO( inv-73.in ) ;
+net-adder-sum<0> =	FROM( adder.sum<0> )	TO( inv-74.in ) ;
+net-adder-sum<15> =	FROM( adder.sum<15> )	TO( inv-75.in ) ;
+net-adder-sum<14> =	FROM( adder.sum<14> )	TO( inv-76.in ) ;
+net-adder-sum<13> =	FROM( adder.sum<13> )	TO( inv-77.in ) ;
+net-adder-sum<12> =	FROM( adder.sum<12> )	TO( inv-78.in ) ;
+net-adder-sum<11> =	FROM( adder.sum<11> )	TO( inv-79.in ) ;
+net-adder-sum<10> =	FROM( adder.sum<10> )	TO( inv-80.in ) ;
+net-adder-sum<9> =	FROM( adder.sum<9> )	TO( inv-81.in ) ;
+net-adder-sum<8> =	FROM( adder.sum<8> )	TO( inv-82.in ) ;
+net-adder-sum<23> =	FROM( adder.sum<23> )	TO( inv-83.in ) ;
+net-adder-sum<22> =	FROM( adder.sum<22> )	TO( inv-84.in ) ;
+net-adder-sum<21> =	FROM( adder.sum<21> )	TO( inv-85.in ) ;
+net-adder-sum<20> =	FROM( adder.sum<20> )	TO( inv-86.in ) ;
+net-adder-sum<19> =	FROM( adder.sum<19> )	TO( inv-87.in ) ;
+net-adder-sum<18> =	FROM( adder.sum<18> )	TO( inv-88.in ) ;
+net-adder-sum<17> =	FROM( adder.sum<17> )	TO( inv-89.in ) ;
+net-adder-sum<16> =	FROM( adder.sum<16> )	TO( inv-90.in ) ;
+net-adder-sum<31> =	FROM( adder.sum<31> )	TO( inv-91.in ) ;
+net-adder-sum<30> =	FROM( adder.sum<30> )	TO( inv-92.in ) ;
+net-adder-sum<29> =	FROM( adder.sum<29> )	TO( inv-93.in ) ;
+net-adder-sum<28> =	FROM( adder.sum<28> )	TO( inv-94.in ) ;
+net-adder-sum<27> =	FROM( adder.sum<27> )	TO( inv-95.in ) ;
+net-adder-sum<26> =	FROM( adder.sum<26> )	TO( inv-96.in ) ;
+net-adder-sum<25> =	FROM( adder.sum<25> )	TO( inv-97.in ) ;
+net-adder-sum<24> =	FROM( adder.sum<24> )	TO( inv-98.in ) ;
+net-eor-3-out =	FROM( eor-3.out )	TO( inv-99.in ) ;
+net-eor-2-out =	FROM( eor-2.out )	TO( inv-100.in ) ;
+"***** reset clock *****"
+net--m_clock =	FROM( .m_clock )	TO( adder.m_clock ) ;
+net--s_clock =	FROM( .s_clock )	TO( adder.s_clock ) ;
+net--p_reset =	FROM( .p_reset )	TO( adder.p_reset ) ;
+net--b_clock =	FROM( .b_clock )	TO( adder.b_clock ) ;
+END-SECTION ;
+END ;
+
+NAME:sl1-5;
+PURPOSE:SFL;
+PROCESS:SFL;
+LEVEL:SFL;
+EXT:
+    out,
+    in1,
+    in2,
+    in3,
+    in4,
+    in5,
+    sel1,
+    sel2,
+    sel3,
+    sel4,
+    sel5;
+INPUTS:
+    .in1,
+    .in2,
+    .in3,
+    .in4,
+    .in5,
+    .sel1,
+    .sel2,
+    .sel3,
+    .sel4,
+    .sel5;
+OUTPUTS:
+    .out;
+TYPES:
+    nand--5,
+    nand--2;
+nand--5:
+    nand-1;
+nand--2:
+    nand-6,
+    nand-5,
+    nand-4,
+    nand-3,
+    nand-2;
+END-TYPES;
+NET-SECTION;
+net-nand-1-nout = FROM(nand-1.nout) TO(.out);
+net-nand-2-nout = FROM(nand-2.nout) TO(nand-1.in1);
+net-nand-3-nout = FROM(nand-3.nout) TO(nand-1.in2);
+net-nand-4-nout = FROM(nand-4.nout) TO(nand-1.in3);
+net-nand-5-nout = FROM(nand-5.nout) TO(nand-1.in4);
+net-nand-6-nout = FROM(nand-6.nout) TO(nand-1.in5);
+net--in5 = FROM(.in5) TO(nand-2.in1);
+net--sel5 = FROM(.sel5) TO(nand-2.in2);
+net--in4 = FROM(.in4) TO(nand-3.in1);
+net--sel4 = FROM(.sel4) TO(nand-3.in2);
+net--in3 = FROM(.in3) TO(nand-4.in1);
+net--sel3 = FROM(.sel3) TO(nand-4.in2);
+net--in2 = FROM(.in2) TO(nand-5.in1);
+net--sel2 = FROM(.sel2) TO(nand-5.in2);
+net--in1 = FROM(.in1) TO(nand-6.in1);
+net--sel1 = FROM(.sel1) TO(nand-6.in2);
+END-SECTION;
+END;
+
+NAME:sl32-2;
+PURPOSE:SFL;
+PROCESS:SFL;
+LEVEL:SFL;
+EXT:out<31:0>,in1<31:0>,in2<31:0>,sel1,sel2;
+INPUTS:.in1<31:0>,.in2<31:0>,.sel1,.sel2;
+OUTPUTS:.out<31:0>;
+TYPES:sl1-2;
+sl1-2:sel-0,sel-1,sel-2,sel-3,sel-4,sel-5,sel-6,sel-7,sel-8,sel-9,sel-10,sel-11,sel-12,sel-13,sel-14,sel-15,sel-16,sel-17,sel-18,sel-19,sel-20,sel-21,sel-22,sel-23,sel-24,sel-25,sel-26,sel-27,sel-28,sel-29,sel-30,sel-31;
+END-TYPES ;
+NET-SECTION ;
+net_in-1-0=FROM(.in1<0>) TO(sel-0.in1);
+net_in-1-1=FROM(.in1<1>) TO(sel-1.in1);
+net_in-1-2=FROM(.in1<2>) TO(sel-2.in1);
+net_in-1-3=FROM(.in1<3>) TO(sel-3.in1);
+net_in-1-4=FROM(.in1<4>) TO(sel-4.in1);
+net_in-1-5=FROM(.in1<5>) TO(sel-5.in1);
+net_in-1-6=FROM(.in1<6>) TO(sel-6.in1);
+net_in-1-7=FROM(.in1<7>) TO(sel-7.in1);
+net_in-1-8=FROM(.in1<8>) TO(sel-8.in1);
+net_in-1-9=FROM(.in1<9>) TO(sel-9.in1);
+net_in-1-10=FROM(.in1<10>) TO(sel-10.in1);
+net_in-1-11=FROM(.in1<11>) TO(sel-11.in1);
+net_in-1-12=FROM(.in1<12>) TO(sel-12.in1);
+net_in-1-13=FROM(.in1<13>) TO(sel-13.in1);
+net_in-1-14=FROM(.in1<14>) TO(sel-14.in1);
+net_in-1-15=FROM(.in1<15>) TO(sel-15.in1);
+net_in-1-16=FROM(.in1<16>) TO(sel-16.in1);
+net_in-1-17=FROM(.in1<17>) TO(sel-17.in1);
+net_in-1-18=FROM(.in1<18>) TO(sel-18.in1);
+net_in-1-19=FROM(.in1<19>) TO(sel-19.in1);
+net_in-1-20=FROM(.in1<20>) TO(sel-20.in1);
+net_in-1-21=FROM(.in1<21>) TO(sel-21.in1);
+net_in-1-22=FROM(.in1<22>) TO(sel-22.in1);
+net_in-1-23=FROM(.in1<23>) TO(sel-23.in1);
+net_in-1-24=FROM(.in1<24>) TO(sel-24.in1);
+net_in-1-25=FROM(.in1<25>) TO(sel-25.in1);
+net_in-1-26=FROM(.in1<26>) TO(sel-26.in1);
+net_in-1-27=FROM(.in1<27>) TO(sel-27.in1);
+net_in-1-28=FROM(.in1<28>) TO(sel-28.in1);
+net_in-1-29=FROM(.in1<29>) TO(sel-29.in1);
+net_in-1-30=FROM(.in1<30>) TO(sel-30.in1);
+net_in-1-31=FROM(.in1<31>) TO(sel-31.in1);
+net_in-2-0=FROM(.in2<0>) TO(sel-0.in2);
+net_in-2-1=FROM(.in2<1>) TO(sel-1.in2);
+net_in-2-2=FROM(.in2<2>) TO(sel-2.in2);
+net_in-2-3=FROM(.in2<3>) TO(sel-3.in2);
+net_in-2-4=FROM(.in2<4>) TO(sel-4.in2);
+net_in-2-5=FROM(.in2<5>) TO(sel-5.in2);
+net_in-2-6=FROM(.in2<6>) TO(sel-6.in2);
+net_in-2-7=FROM(.in2<7>) TO(sel-7.in2);
+net_in-2-8=FROM(.in2<8>) TO(sel-8.in2);
+net_in-2-9=FROM(.in2<9>) TO(sel-9.in2);
+net_in-2-10=FROM(.in2<10>) TO(sel-10.in2);
+net_in-2-11=FROM(.in2<11>) TO(sel-11.in2);
+net_in-2-12=FROM(.in2<12>) TO(sel-12.in2);
+net_in-2-13=FROM(.in2<13>) TO(sel-13.in2);
+net_in-2-14=FROM(.in2<14>) TO(sel-14.in2);
+net_in-2-15=FROM(.in2<15>) TO(sel-15.in2);
+net_in-2-16=FROM(.in2<16>) TO(sel-16.in2);
+net_in-2-17=FROM(.in2<17>) TO(sel-17.in2);
+net_in-2-18=FROM(.in2<18>) TO(sel-18.in2);
+net_in-2-19=FROM(.in2<19>) TO(sel-19.in2);
+net_in-2-20=FROM(.in2<20>) TO(sel-20.in2);
+net_in-2-21=FROM(.in2<21>) TO(sel-21.in2);
+net_in-2-22=FROM(.in2<22>) TO(sel-22.in2);
+net_in-2-23=FROM(.in2<23>) TO(sel-23.in2);
+net_in-2-24=FROM(.in2<24>) TO(sel-24.in2);
+net_in-2-25=FROM(.in2<25>) TO(sel-25.in2);
+net_in-2-26=FROM(.in2<26>) TO(sel-26.in2);
+net_in-2-27=FROM(.in2<27>) TO(sel-27.in2);
+net_in-2-28=FROM(.in2<28>) TO(sel-28.in2);
+net_in-2-29=FROM(.in2<29>) TO(sel-29.in2);
+net_in-2-30=FROM(.in2<30>) TO(sel-30.in2);
+net_in-2-31=FROM(.in2<31>) TO(sel-31.in2);
+net_sel-1=FROM(.sel1) TO(sel-0.sel1);
+net_sel-1=FROM(.sel1) TO(sel-1.sel1);
+net_sel-1=FROM(.sel1) TO(sel-2.sel1);
+net_sel-1=FROM(.sel1) TO(sel-3.sel1);
+net_sel-1=FROM(.sel1) TO(sel-4.sel1);
+net_sel-1=FROM(.sel1) TO(sel-5.sel1);
+net_sel-1=FROM(.sel1) TO(sel-6.sel1);
+net_sel-1=FROM(.sel1) TO(sel-7.sel1);
+net_sel-1=FROM(.sel1) TO(sel-8.sel1);
+net_sel-1=FROM(.sel1) TO(sel-9.sel1);
+net_sel-1=FROM(.sel1) TO(sel-10.sel1);
+net_sel-1=FROM(.sel1) TO(sel-11.sel1);
+net_sel-1=FROM(.sel1) TO(sel-12.sel1);
+net_sel-1=FROM(.sel1) TO(sel-13.sel1);
+net_sel-1=FROM(.sel1) TO(sel-14.sel1);
+net_sel-1=FROM(.sel1) TO(sel-15.sel1);
+net_sel-1=FROM(.sel1) TO(sel-16.sel1);
+net_sel-1=FROM(.sel1) TO(sel-17.sel1);
+net_sel-1=FROM(.sel1) TO(sel-18.sel1);
+net_sel-1=FROM(.sel1) TO(sel-19.sel1);
+net_sel-1=FROM(.sel1) TO(sel-20.sel1);
+net_sel-1=FROM(.sel1) TO(sel-21.sel1);
+net_sel-1=FROM(.sel1) TO(sel-22.sel1);
+net_sel-1=FROM(.sel1) TO(sel-23.sel1);
+net_sel-1=FROM(.sel1) TO(sel-24.sel1);
+net_sel-1=FROM(.sel1) TO(sel-25.sel1);
+net_sel-1=FROM(.sel1) TO(sel-26.sel1);
+net_sel-1=FROM(.sel1) TO(sel-27.sel1);
+net_sel-1=FROM(.sel1) TO(sel-28.sel1);
+net_sel-1=FROM(.sel1) TO(sel-29.sel1);
+net_sel-1=FROM(.sel1) TO(sel-30.sel1);
+net_sel-1=FROM(.sel1) TO(sel-31.sel1);
+net_sel-2=FROM(.sel2) TO(sel-0.sel2);
+net_sel-2=FROM(.sel2) TO(sel-1.sel2);
+net_sel-2=FROM(.sel2) TO(sel-2.sel2);
+net_sel-2=FROM(.sel2) TO(sel-3.sel2);
+net_sel-2=FROM(.sel2) TO(sel-4.sel2);
+net_sel-2=FROM(.sel2) TO(sel-5.sel2);
+net_sel-2=FROM(.sel2) TO(sel-6.sel2);
+net_sel-2=FROM(.sel2) TO(sel-7.sel2);
+net_sel-2=FROM(.sel2) TO(sel-8.sel2);
+net_sel-2=FROM(.sel2) TO(sel-9.sel2);
+net_sel-2=FROM(.sel2) TO(sel-10.sel2);
+net_sel-2=FROM(.sel2) TO(sel-11.sel2);
+net_sel-2=FROM(.sel2) TO(sel-12.sel2);
+net_sel-2=FROM(.sel2) TO(sel-13.sel2);
+net_sel-2=FROM(.sel2) TO(sel-14.sel2);
+net_sel-2=FROM(.sel2) TO(sel-15.sel2);
+net_sel-2=FROM(.sel2) TO(sel-16.sel2);
+net_sel-2=FROM(.sel2) TO(sel-17.sel2);
+net_sel-2=FROM(.sel2) TO(sel-18.sel2);
+net_sel-2=FROM(.sel2) TO(sel-19.sel2);
+net_sel-2=FROM(.sel2) TO(sel-20.sel2);
+net_sel-2=FROM(.sel2) TO(sel-21.sel2);
+net_sel-2=FROM(.sel2) TO(sel-22.sel2);
+net_sel-2=FROM(.sel2) TO(sel-23.sel2);
+net_sel-2=FROM(.sel2) TO(sel-24.sel2);
+net_sel-2=FROM(.sel2) TO(sel-25.sel2);
+net_sel-2=FROM(.sel2) TO(sel-26.sel2);
+net_sel-2=FROM(.sel2) TO(sel-27.sel2);
+net_sel-2=FROM(.sel2) TO(sel-28.sel2);
+net_sel-2=FROM(.sel2) TO(sel-29.sel2);
+net_sel-2=FROM(.sel2) TO(sel-30.sel2);
+net_sel-2=FROM(.sel2) TO(sel-31.sel2);
+net_out-0=FROM(sel-0.out) TO(.out<0>);
+net_out-1=FROM(sel-1.out) TO(.out<1>);
+net_out-2=FROM(sel-2.out) TO(.out<2>);
+net_out-3=FROM(sel-3.out) TO(.out<3>);
+net_out-4=FROM(sel-4.out) TO(.out<4>);
+net_out-5=FROM(sel-5.out) TO(.out<5>);
+net_out-6=FROM(sel-6.out) TO(.out<6>);
+net_out-7=FROM(sel-7.out) TO(.out<7>);
+net_out-8=FROM(sel-8.out) TO(.out<8>);
+net_out-9=FROM(sel-9.out) TO(.out<9>);
+net_out-10=FROM(sel-10.out) TO(.out<10>);
+net_out-11=FROM(sel-11.out) TO(.out<11>);
+net_out-12=FROM(sel-12.out) TO(.out<12>);
+net_out-13=FROM(sel-13.out) TO(.out<13>);
+net_out-14=FROM(sel-14.out) TO(.out<14>);
+net_out-15=FROM(sel-15.out) TO(.out<15>);
+net_out-16=FROM(sel-16.out) TO(.out<16>);
+net_out-17=FROM(sel-17.out) TO(.out<17>);
+net_out-18=FROM(sel-18.out) TO(.out<18>);
+net_out-19=FROM(sel-19.out) TO(.out<19>);
+net_out-20=FROM(sel-20.out) TO(.out<20>);
+net_out-21=FROM(sel-21.out) TO(.out<21>);
+net_out-22=FROM(sel-22.out) TO(.out<22>);
+net_out-23=FROM(sel-23.out) TO(.out<23>);
+net_out-24=FROM(sel-24.out) TO(.out<24>);
+net_out-25=FROM(sel-25.out) TO(.out<25>);
+net_out-26=FROM(sel-26.out) TO(.out<26>);
+net_out-27=FROM(sel-27.out) TO(.out<27>);
+net_out-28=FROM(sel-28.out) TO(.out<28>);
+net_out-29=FROM(sel-29.out) TO(.out<29>);
+net_out-30=FROM(sel-30.out) TO(.out<30>);
+net_out-31=FROM(sel-31.out) TO(.out<31>);
+END-SECTION ;
+END ;
+
+NAME:sl1-2;
+PURPOSE:SFL;
+PROCESS:SFL;
+LEVEL:SFL;
+EXT:
+    out,
+    in1,
+    in2,
+    sel1,
+    sel2;
+INPUTS:
+    .in1,
+    .in2,
+    .sel1,
+    .sel2;
+OUTPUTS:
+    .out;
+TYPES:
+    nand--2;
+nand--2:
+    nand-3,
+    nand-2,
+    nand-1;
+END-TYPES;
+NET-SECTION;
+net-nand-1-nout = FROM(nand-1.nout) TO(.out);
+net-nand-2-nout = FROM(nand-2.nout) TO(nand-1.in1);
+net-nand-3-nout = FROM(nand-3.nout) TO(nand-1.in2);
+net--in2 = FROM(.in2) TO(nand-2.in1);
+net--sel2 = FROM(.sel2) TO(nand-2.in2);
+net--in1 = FROM(.in1) TO(nand-3.in1);
+net--sel1 = FROM(.sel1) TO(nand-3.in2);
+END-SECTION;
+END;
+
+NAME:sl32-5;
+PURPOSE:SFL;
+PROCESS:SFL;
+LEVEL:SFL;
+EXT:out<31:0>,in1<31:0>,in2<31:0>,in3<31:0>,in4<31:0>,in5<31:0>,sel1,sel2,sel3,sel4,sel5;
+INPUTS:.in1<31:0>,.in2<31:0>,.in3<31:0>,.in4<31:0>,.in5<31:0>,.sel1,.sel2,.sel3,.sel4,.sel5;
+OUTPUTS:.out<31:0>;
+TYPES:sl1-5;
+sl1-5:sel-0,sel-1,sel-2,sel-3,sel-4,sel-5,sel-6,sel-7,sel-8,sel-9,sel-10,sel-11,sel-12,sel-13,sel-14,sel-15,sel-16,sel-17,sel-18,sel-19,sel-20,sel-21,sel-22,sel-23,sel-24,sel-25,sel-26,sel-27,sel-28,sel-29,sel-30,sel-31;
+END-TYPES ;
+NET-SECTION ;
+net_in-1-0=FROM(.in1<0>) TO(sel-0.in1);
+net_in-1-1=FROM(.in1<1>) TO(sel-1.in1);
+net_in-1-2=FROM(.in1<2>) TO(sel-2.in1);
+net_in-1-3=FROM(.in1<3>) TO(sel-3.in1);
+net_in-1-4=FROM(.in1<4>) TO(sel-4.in1);
+net_in-1-5=FROM(.in1<5>) TO(sel-5.in1);
+net_in-1-6=FROM(.in1<6>) TO(sel-6.in1);
+net_in-1-7=FROM(.in1<7>) TO(sel-7.in1);
+net_in-1-8=FROM(.in1<8>) TO(sel-8.in1);
+net_in-1-9=FROM(.in1<9>) TO(sel-9.in1);
+net_in-1-10=FROM(.in1<10>) TO(sel-10.in1);
+net_in-1-11=FROM(.in1<11>) TO(sel-11.in1);
+net_in-1-12=FROM(.in1<12>) TO(sel-12.in1);
+net_in-1-13=FROM(.in1<13>) TO(sel-13.in1);
+net_in-1-14=FROM(.in1<14>) TO(sel-14.in1);
+net_in-1-15=FROM(.in1<15>) TO(sel-15.in1);
+net_in-1-16=FROM(.in1<16>) TO(sel-16.in1);
+net_in-1-17=FROM(.in1<17>) TO(sel-17.in1);
+net_in-1-18=FROM(.in1<18>) TO(sel-18.in1);
+net_in-1-19=FROM(.in1<19>) TO(sel-19.in1);
+net_in-1-20=FROM(.in1<20>) TO(sel-20.in1);
+net_in-1-21=FROM(.in1<21>) TO(sel-21.in1);
+net_in-1-22=FROM(.in1<22>) TO(sel-22.in1);
+net_in-1-23=FROM(.in1<23>) TO(sel-23.in1);
+net_in-1-24=FROM(.in1<24>) TO(sel-24.in1);
+net_in-1-25=FROM(.in1<25>) TO(sel-25.in1);
+net_in-1-26=FROM(.in1<26>) TO(sel-26.in1);
+net_in-1-27=FROM(.in1<27>) TO(sel-27.in1);
+net_in-1-28=FROM(.in1<28>) TO(sel-28.in1);
+net_in-1-29=FROM(.in1<29>) TO(sel-29.in1);
+net_in-1-30=FROM(.in1<30>) TO(sel-30.in1);
+net_in-1-31=FROM(.in1<31>) TO(sel-31.in1);
+net_in-2-0=FROM(.in2<0>) TO(sel-0.in2);
+net_in-2-1=FROM(.in2<1>) TO(sel-1.in2);
+net_in-2-2=FROM(.in2<2>) TO(sel-2.in2);
+net_in-2-3=FROM(.in2<3>) TO(sel-3.in2);
+net_in-2-4=FROM(.in2<4>) TO(sel-4.in2);
+net_in-2-5=FROM(.in2<5>) TO(sel-5.in2);
+net_in-2-6=FROM(.in2<6>) TO(sel-6.in2);
+net_in-2-7=FROM(.in2<7>) TO(sel-7.in2);
+net_in-2-8=FROM(.in2<8>) TO(sel-8.in2);
+net_in-2-9=FROM(.in2<9>) TO(sel-9.in2);
+net_in-2-10=FROM(.in2<10>) TO(sel-10.in2);
+net_in-2-11=FROM(.in2<11>) TO(sel-11.in2);
+net_in-2-12=FROM(.in2<12>) TO(sel-12.in2);
+net_in-2-13=FROM(.in2<13>) TO(sel-13.in2);
+net_in-2-14=FROM(.in2<14>) TO(sel-14.in2);
+net_in-2-15=FROM(.in2<15>) TO(sel-15.in2);
+net_in-2-16=FROM(.in2<16>) TO(sel-16.in2);
+net_in-2-17=FROM(.in2<17>) TO(sel-17.in2);
+net_in-2-18=FROM(.in2<18>) TO(sel-18.in2);
+net_in-2-19=FROM(.in2<19>) TO(sel-19.in2);
+net_in-2-20=FROM(.in2<20>) TO(sel-20.in2);
+net_in-2-21=FROM(.in2<21>) TO(sel-21.in2);
+net_in-2-22=FROM(.in2<22>) TO(sel-22.in2);
+net_in-2-23=FROM(.in2<23>) TO(sel-23.in2);
+net_in-2-24=FROM(.in2<24>) TO(sel-24.in2);
+net_in-2-25=FROM(.in2<25>) TO(sel-25.in2);
+net_in-2-26=FROM(.in2<26>) TO(sel-26.in2);
+net_in-2-27=FROM(.in2<27>) TO(sel-27.in2);
+net_in-2-28=FROM(.in2<28>) TO(sel-28.in2);
+net_in-2-29=FROM(.in2<29>) TO(sel-29.in2);
+net_in-2-30=FROM(.in2<30>) TO(sel-30.in2);
+net_in-2-31=FROM(.in2<31>) TO(sel-31.in2);
+net_in-3-0=FROM(.in3<0>) TO(sel-0.in3);
+net_in-3-1=FROM(.in3<1>) TO(sel-1.in3);
+net_in-3-2=FROM(.in3<2>) TO(sel-2.in3);
+net_in-3-3=FROM(.in3<3>) TO(sel-3.in3);
+net_in-3-4=FROM(.in3<4>) TO(sel-4.in3);
+net_in-3-5=FROM(.in3<5>) TO(sel-5.in3);
+net_in-3-6=FROM(.in3<6>) TO(sel-6.in3);
+net_in-3-7=FROM(.in3<7>) TO(sel-7.in3);
+net_in-3-8=FROM(.in3<8>) TO(sel-8.in3);
+net_in-3-9=FROM(.in3<9>) TO(sel-9.in3);
+net_in-3-10=FROM(.in3<10>) TO(sel-10.in3);
+net_in-3-11=FROM(.in3<11>) TO(sel-11.in3);
+net_in-3-12=FROM(.in3<12>) TO(sel-12.in3);
+net_in-3-13=FROM(.in3<13>) TO(sel-13.in3);
+net_in-3-14=FROM(.in3<14>) TO(sel-14.in3);
+net_in-3-15=FROM(.in3<15>) TO(sel-15.in3);
+net_in-3-16=FROM(.in3<16>) TO(sel-16.in3);
+net_in-3-17=FROM(.in3<17>) TO(sel-17.in3);
+net_in-3-18=FROM(.in3<18>) TO(sel-18.in3);
+net_in-3-19=FROM(.in3<19>) TO(sel-19.in3);
+net_in-3-20=FROM(.in3<20>) TO(sel-20.in3);
+net_in-3-21=FROM(.in3<21>) TO(sel-21.in3);
+net_in-3-22=FROM(.in3<22>) TO(sel-22.in3);
+net_in-3-23=FROM(.in3<23>) TO(sel-23.in3);
+net_in-3-24=FROM(.in3<24>) TO(sel-24.in3);
+net_in-3-25=FROM(.in3<25>) TO(sel-25.in3);
+net_in-3-26=FROM(.in3<26>) TO(sel-26.in3);
+net_in-3-27=FROM(.in3<27>) TO(sel-27.in3);
+net_in-3-28=FROM(.in3<28>) TO(sel-28.in3);
+net_in-3-29=FROM(.in3<29>) TO(sel-29.in3);
+net_in-3-30=FROM(.in3<30>) TO(sel-30.in3);
+net_in-3-31=FROM(.in3<31>) TO(sel-31.in3);
+net_in-4-0=FROM(.in4<0>) TO(sel-0.in4);
+net_in-4-1=FROM(.in4<1>) TO(sel-1.in4);
+net_in-4-2=FROM(.in4<2>) TO(sel-2.in4);
+net_in-4-3=FROM(.in4<3>) TO(sel-3.in4);
+net_in-4-4=FROM(.in4<4>) TO(sel-4.in4);
+net_in-4-5=FROM(.in4<5>) TO(sel-5.in4);
+net_in-4-6=FROM(.in4<6>) TO(sel-6.in4);
+net_in-4-7=FROM(.in4<7>) TO(sel-7.in4);
+net_in-4-8=FROM(.in4<8>) TO(sel-8.in4);
+net_in-4-9=FROM(.in4<9>) TO(sel-9.in4);
+net_in-4-10=FROM(.in4<10>) TO(sel-10.in4);
+net_in-4-11=FROM(.in4<11>) TO(sel-11.in4);
+net_in-4-12=FROM(.in4<12>) TO(sel-12.in4);
+net_in-4-13=FROM(.in4<13>) TO(sel-13.in4);
+net_in-4-14=FROM(.in4<14>) TO(sel-14.in4);
+net_in-4-15=FROM(.in4<15>) TO(sel-15.in4);
+net_in-4-16=FROM(.in4<16>) TO(sel-16.in4);
+net_in-4-17=FROM(.in4<17>) TO(sel-17.in4);
+net_in-4-18=FROM(.in4<18>) TO(sel-18.in4);
+net_in-4-19=FROM(.in4<19>) TO(sel-19.in4);
+net_in-4-20=FROM(.in4<20>) TO(sel-20.in4);
+net_in-4-21=FROM(.in4<21>) TO(sel-21.in4);
+net_in-4-22=FROM(.in4<22>) TO(sel-22.in4);
+net_in-4-23=FROM(.in4<23>) TO(sel-23.in4);
+net_in-4-24=FROM(.in4<24>) TO(sel-24.in4);
+net_in-4-25=FROM(.in4<25>) TO(sel-25.in4);
+net_in-4-26=FROM(.in4<26>) TO(sel-26.in4);
+net_in-4-27=FROM(.in4<27>) TO(sel-27.in4);
+net_in-4-28=FROM(.in4<28>) TO(sel-28.in4);
+net_in-4-29=FROM(.in4<29>) TO(sel-29.in4);
+net_in-4-30=FROM(.in4<30>) TO(sel-30.in4);
+net_in-4-31=FROM(.in4<31>) TO(sel-31.in4);
+net_in-5-0=FROM(.in5<0>) TO(sel-0.in5);
+net_in-5-1=FROM(.in5<1>) TO(sel-1.in5);
+net_in-5-2=FROM(.in5<2>) TO(sel-2.in5);
+net_in-5-3=FROM(.in5<3>) TO(sel-3.in5);
+net_in-5-4=FROM(.in5<4>) TO(sel-4.in5);
+net_in-5-5=FROM(.in5<5>) TO(sel-5.in5);
+net_in-5-6=FROM(.in5<6>) TO(sel-6.in5);
+net_in-5-7=FROM(.in5<7>) TO(sel-7.in5);
+net_in-5-8=FROM(.in5<8>) TO(sel-8.in5);
+net_in-5-9=FROM(.in5<9>) TO(sel-9.in5);
+net_in-5-10=FROM(.in5<10>) TO(sel-10.in5);
+net_in-5-11=FROM(.in5<11>) TO(sel-11.in5);
+net_in-5-12=FROM(.in5<12>) TO(sel-12.in5);
+net_in-5-13=FROM(.in5<13>) TO(sel-13.in5);
+net_in-5-14=FROM(.in5<14>) TO(sel-14.in5);
+net_in-5-15=FROM(.in5<15>) TO(sel-15.in5);
+net_in-5-16=FROM(.in5<16>) TO(sel-16.in5);
+net_in-5-17=FROM(.in5<17>) TO(sel-17.in5);
+net_in-5-18=FROM(.in5<18>) TO(sel-18.in5);
+net_in-5-19=FROM(.in5<19>) TO(sel-19.in5);
+net_in-5-20=FROM(.in5<20>) TO(sel-20.in5);
+net_in-5-21=FROM(.in5<21>) TO(sel-21.in5);
+net_in-5-22=FROM(.in5<22>) TO(sel-22.in5);
+net_in-5-23=FROM(.in5<23>) TO(sel-23.in5);
+net_in-5-24=FROM(.in5<24>) TO(sel-24.in5);
+net_in-5-25=FROM(.in5<25>) TO(sel-25.in5);
+net_in-5-26=FROM(.in5<26>) TO(sel-26.in5);
+net_in-5-27=FROM(.in5<27>) TO(sel-27.in5);
+net_in-5-28=FROM(.in5<28>) TO(sel-28.in5);
+net_in-5-29=FROM(.in5<29>) TO(sel-29.in5);
+net_in-5-30=FROM(.in5<30>) TO(sel-30.in5);
+net_in-5-31=FROM(.in5<31>) TO(sel-31.in5);
+net_sel-1=FROM(.sel1) TO(sel-0.sel1);
+net_sel-1=FROM(.sel1) TO(sel-1.sel1);
+net_sel-1=FROM(.sel1) TO(sel-2.sel1);
+net_sel-1=FROM(.sel1) TO(sel-3.sel1);
+net_sel-1=FROM(.sel1) TO(sel-4.sel1);
+net_sel-1=FROM(.sel1) TO(sel-5.sel1);
+net_sel-1=FROM(.sel1) TO(sel-6.sel1);
+net_sel-1=FROM(.sel1) TO(sel-7.sel1);
+net_sel-1=FROM(.sel1) TO(sel-8.sel1);
+net_sel-1=FROM(.sel1) TO(sel-9.sel1);
+net_sel-1=FROM(.sel1) TO(sel-10.sel1);
+net_sel-1=FROM(.sel1) TO(sel-11.sel1);
+net_sel-1=FROM(.sel1) TO(sel-12.sel1);
+net_sel-1=FROM(.sel1) TO(sel-13.sel1);
+net_sel-1=FROM(.sel1) TO(sel-14.sel1);
+net_sel-1=FROM(.sel1) TO(sel-15.sel1);
+net_sel-1=FROM(.sel1) TO(sel-16.sel1);
+net_sel-1=FROM(.sel1) TO(sel-17.sel1);
+net_sel-1=FROM(.sel1) TO(sel-18.sel1);
+net_sel-1=FROM(.sel1) TO(sel-19.sel1);
+net_sel-1=FROM(.sel1) TO(sel-20.sel1);
+net_sel-1=FROM(.sel1) TO(sel-21.sel1);
+net_sel-1=FROM(.sel1) TO(sel-22.sel1);
+net_sel-1=FROM(.sel1) TO(sel-23.sel1);
+net_sel-1=FROM(.sel1) TO(sel-24.sel1);
+net_sel-1=FROM(.sel1) TO(sel-25.sel1);
+net_sel-1=FROM(.sel1) TO(sel-26.sel1);
+net_sel-1=FROM(.sel1) TO(sel-27.sel1);
+net_sel-1=FROM(.sel1) TO(sel-28.sel1);
+net_sel-1=FROM(.sel1) TO(sel-29.sel1);
+net_sel-1=FROM(.sel1) TO(sel-30.sel1);
+net_sel-1=FROM(.sel1) TO(sel-31.sel1);
+net_sel-2=FROM(.sel2) TO(sel-0.sel2);
+net_sel-2=FROM(.sel2) TO(sel-1.sel2);
+net_sel-2=FROM(.sel2) TO(sel-2.sel2);
+net_sel-2=FROM(.sel2) TO(sel-3.sel2);
+net_sel-2=FROM(.sel2) TO(sel-4.sel2);
+net_sel-2=FROM(.sel2) TO(sel-5.sel2);
+net_sel-2=FROM(.sel2) TO(sel-6.sel2);
+net_sel-2=FROM(.sel2) TO(sel-7.sel2);
+net_sel-2=FROM(.sel2) TO(sel-8.sel2);
+net_sel-2=FROM(.sel2) TO(sel-9.sel2);
+net_sel-2=FROM(.sel2) TO(sel-10.sel2);
+net_sel-2=FROM(.sel2) TO(sel-11.sel2);
+net_sel-2=FROM(.sel2) TO(sel-12.sel2);
+net_sel-2=FROM(.sel2) TO(sel-13.sel2);
+net_sel-2=FROM(.sel2) TO(sel-14.sel2);
+net_sel-2=FROM(.sel2) TO(sel-15.sel2);
+net_sel-2=FROM(.sel2) TO(sel-16.sel2);
+net_sel-2=FROM(.sel2) TO(sel-17.sel2);
+net_sel-2=FROM(.sel2) TO(sel-18.sel2);
+net_sel-2=FROM(.sel2) TO(sel-19.sel2);
+net_sel-2=FROM(.sel2) TO(sel-20.sel2);
+net_sel-2=FROM(.sel2) TO(sel-21.sel2);
+net_sel-2=FROM(.sel2) TO(sel-22.sel2);
+net_sel-2=FROM(.sel2) TO(sel-23.sel2);
+net_sel-2=FROM(.sel2) TO(sel-24.sel2);
+net_sel-2=FROM(.sel2) TO(sel-25.sel2);
+net_sel-2=FROM(.sel2) TO(sel-26.sel2);
+net_sel-2=FROM(.sel2) TO(sel-27.sel2);
+net_sel-2=FROM(.sel2) TO(sel-28.sel2);
+net_sel-2=FROM(.sel2) TO(sel-29.sel2);
+net_sel-2=FROM(.sel2) TO(sel-30.sel2);
+net_sel-2=FROM(.sel2) TO(sel-31.sel2);
+net_sel-3=FROM(.sel3) TO(sel-0.sel3);
+net_sel-3=FROM(.sel3) TO(sel-1.sel3);
+net_sel-3=FROM(.sel3) TO(sel-2.sel3);
+net_sel-3=FROM(.sel3) TO(sel-3.sel3);
+net_sel-3=FROM(.sel3) TO(sel-4.sel3);
+net_sel-3=FROM(.sel3) TO(sel-5.sel3);
+net_sel-3=FROM(.sel3) TO(sel-6.sel3);
+net_sel-3=FROM(.sel3) TO(sel-7.sel3);
+net_sel-3=FROM(.sel3) TO(sel-8.sel3);
+net_sel-3=FROM(.sel3) TO(sel-9.sel3);
+net_sel-3=FROM(.sel3) TO(sel-10.sel3);
+net_sel-3=FROM(.sel3) TO(sel-11.sel3);
+net_sel-3=FROM(.sel3) TO(sel-12.sel3);
+net_sel-3=FROM(.sel3) TO(sel-13.sel3);
+net_sel-3=FROM(.sel3) TO(sel-14.sel3);
+net_sel-3=FROM(.sel3) TO(sel-15.sel3);
+net_sel-3=FROM(.sel3) TO(sel-16.sel3);
+net_sel-3=FROM(.sel3) TO(sel-17.sel3);
+net_sel-3=FROM(.sel3) TO(sel-18.sel3);
+net_sel-3=FROM(.sel3) TO(sel-19.sel3);
+net_sel-3=FROM(.sel3) TO(sel-20.sel3);
+net_sel-3=FROM(.sel3) TO(sel-21.sel3);
+net_sel-3=FROM(.sel3) TO(sel-22.sel3);
+net_sel-3=FROM(.sel3) TO(sel-23.sel3);
+net_sel-3=FROM(.sel3) TO(sel-24.sel3);
+net_sel-3=FROM(.sel3) TO(sel-25.sel3);
+net_sel-3=FROM(.sel3) TO(sel-26.sel3);
+net_sel-3=FROM(.sel3) TO(sel-27.sel3);
+net_sel-3=FROM(.sel3) TO(sel-28.sel3);
+net_sel-3=FROM(.sel3) TO(sel-29.sel3);
+net_sel-3=FROM(.sel3) TO(sel-30.sel3);
+net_sel-3=FROM(.sel3) TO(sel-31.sel3);
+net_sel-4=FROM(.sel4) TO(sel-0.sel4);
+net_sel-4=FROM(.sel4) TO(sel-1.sel4);
+net_sel-4=FROM(.sel4) TO(sel-2.sel4);
+net_sel-4=FROM(.sel4) TO(sel-3.sel4);
+net_sel-4=FROM(.sel4) TO(sel-4.sel4);
+net_sel-4=FROM(.sel4) TO(sel-5.sel4);
+net_sel-4=FROM(.sel4) TO(sel-6.sel4);
+net_sel-4=FROM(.sel4) TO(sel-7.sel4);
+net_sel-4=FROM(.sel4) TO(sel-8.sel4);
+net_sel-4=FROM(.sel4) TO(sel-9.sel4);
+net_sel-4=FROM(.sel4) TO(sel-10.sel4);
+net_sel-4=FROM(.sel4) TO(sel-11.sel4);
+net_sel-4=FROM(.sel4) TO(sel-12.sel4);
+net_sel-4=FROM(.sel4) TO(sel-13.sel4);
+net_sel-4=FROM(.sel4) TO(sel-14.sel4);
+net_sel-4=FROM(.sel4) TO(sel-15.sel4);
+net_sel-4=FROM(.sel4) TO(sel-16.sel4);
+net_sel-4=FROM(.sel4) TO(sel-17.sel4);
+net_sel-4=FROM(.sel4) TO(sel-18.sel4);
+net_sel-4=FROM(.sel4) TO(sel-19.sel4);
+net_sel-4=FROM(.sel4) TO(sel-20.sel4);
+net_sel-4=FROM(.sel4) TO(sel-21.sel4);
+net_sel-4=FROM(.sel4) TO(sel-22.sel4);
+net_sel-4=FROM(.sel4) TO(sel-23.sel4);
+net_sel-4=FROM(.sel4) TO(sel-24.sel4);
+net_sel-4=FROM(.sel4) TO(sel-25.sel4);
+net_sel-4=FROM(.sel4) TO(sel-26.sel4);
+net_sel-4=FROM(.sel4) TO(sel-27.sel4);
+net_sel-4=FROM(.sel4) TO(sel-28.sel4);
+net_sel-4=FROM(.sel4) TO(sel-29.sel4);
+net_sel-4=FROM(.sel4) TO(sel-30.sel4);
+net_sel-4=FROM(.sel4) TO(sel-31.sel4);
+net_sel-5=FROM(.sel5) TO(sel-0.sel5);
+net_sel-5=FROM(.sel5) TO(sel-1.sel5);
+net_sel-5=FROM(.sel5) TO(sel-2.sel5);
+net_sel-5=FROM(.sel5) TO(sel-3.sel5);
+net_sel-5=FROM(.sel5) TO(sel-4.sel5);
+net_sel-5=FROM(.sel5) TO(sel-5.sel5);
+net_sel-5=FROM(.sel5) TO(sel-6.sel5);
+net_sel-5=FROM(.sel5) TO(sel-7.sel5);
+net_sel-5=FROM(.sel5) TO(sel-8.sel5);
+net_sel-5=FROM(.sel5) TO(sel-9.sel5);
+net_sel-5=FROM(.sel5) TO(sel-10.sel5);
+net_sel-5=FROM(.sel5) TO(sel-11.sel5);
+net_sel-5=FROM(.sel5) TO(sel-12.sel5);
+net_sel-5=FROM(.sel5) TO(sel-13.sel5);
+net_sel-5=FROM(.sel5) TO(sel-14.sel5);
+net_sel-5=FROM(.sel5) TO(sel-15.sel5);
+net_sel-5=FROM(.sel5) TO(sel-16.sel5);
+net_sel-5=FROM(.sel5) TO(sel-17.sel5);
+net_sel-5=FROM(.sel5) TO(sel-18.sel5);
+net_sel-5=FROM(.sel5) TO(sel-19.sel5);
+net_sel-5=FROM(.sel5) TO(sel-20.sel5);
+net_sel-5=FROM(.sel5) TO(sel-21.sel5);
+net_sel-5=FROM(.sel5) TO(sel-22.sel5);
+net_sel-5=FROM(.sel5) TO(sel-23.sel5);
+net_sel-5=FROM(.sel5) TO(sel-24.sel5);
+net_sel-5=FROM(.sel5) TO(sel-25.sel5);
+net_sel-5=FROM(.sel5) TO(sel-26.sel5);
+net_sel-5=FROM(.sel5) TO(sel-27.sel5);
+net_sel-5=FROM(.sel5) TO(sel-28.sel5);
+net_sel-5=FROM(.sel5) TO(sel-29.sel5);
+net_sel-5=FROM(.sel5) TO(sel-30.sel5);
+net_sel-5=FROM(.sel5) TO(sel-31.sel5);
+net_out-0=FROM(sel-0.out) TO(.out<0>);
+net_out-1=FROM(sel-1.out) TO(.out<1>);
+net_out-2=FROM(sel-2.out) TO(.out<2>);
+net_out-3=FROM(sel-3.out) TO(.out<3>);
+net_out-4=FROM(sel-4.out) TO(.out<4>);
+net_out-5=FROM(sel-5.out) TO(.out<5>);
+net_out-6=FROM(sel-6.out) TO(.out<6>);
+net_out-7=FROM(sel-7.out) TO(.out<7>);
+net_out-8=FROM(sel-8.out) TO(.out<8>);
+net_out-9=FROM(sel-9.out) TO(.out<9>);
+net_out-10=FROM(sel-10.out) TO(.out<10>);
+net_out-11=FROM(sel-11.out) TO(.out<11>);
+net_out-12=FROM(sel-12.out) TO(.out<12>);
+net_out-13=FROM(sel-13.out) TO(.out<13>);
+net_out-14=FROM(sel-14.out) TO(.out<14>);
+net_out-15=FROM(sel-15.out) TO(.out<15>);
+net_out-16=FROM(sel-16.out) TO(.out<16>);
+net_out-17=FROM(sel-17.out) TO(.out<17>);
+net_out-18=FROM(sel-18.out) TO(.out<18>);
+net_out-19=FROM(sel-19.out) TO(.out<19>);
+net_out-20=FROM(sel-20.out) TO(.out<20>);
+net_out-21=FROM(sel-21.out) TO(.out<21>);
+net_out-22=FROM(sel-22.out) TO(.out<22>);
+net_out-23=FROM(sel-23.out) TO(.out<23>);
+net_out-24=FROM(sel-24.out) TO(.out<24>);
+net_out-25=FROM(sel-25.out) TO(.out<25>);
+net_out-26=FROM(sel-26.out) TO(.out<26>);
+net_out-27=FROM(sel-27.out) TO(.out<27>);
+net_out-28=FROM(sel-28.out) TO(.out<28>);
+net_out-29=FROM(sel-29.out) TO(.out<29>);
+net_out-30=FROM(sel-30.out) TO(.out<30>);
+net_out-31=FROM(sel-31.out) TO(.out<31>);
+END-SECTION ;
+END ;
+CEND ;

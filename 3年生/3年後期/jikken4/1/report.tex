@@ -1,0 +1,55 @@
+\documentclass[a4j]{jarticle}
+\usepackage{graphicx}
+
+\title{画像処理　レポート}
+
+\author{氏名: 木下直樹\\学籍番号: 09425521}
+
+\date{提出日: 2015月11月16日}
+
+\begin{document}
+\maketitle
+
+\section{ppm画像を受け取りjpg画像を出力するプログラム}
+入出力のファイル名を実行する際の引数で指定できるようにした.
+\begin{verbatim}
+例： ./a.out file1.ppm file2.jpg 
+\end{verbatim}
+以上の実行でfile1.ppmを受け取り,file2.jpgを出力できる.
+\section{jpg画像を受け取りppm画像を出力するプログラム}
+入出力のファイル名を実行する際の引数で指定できるようにした.
+\begin{verbatim}
+例： ./a.out file1.jpg file2.ppm
+\end{verbatim}
+以上の実行でfile1.jpgを受け取り,file2.ppmを出力できる.
+\section{jpg画像から赤,緑,青の色を取り出し,それぞれ出力するプログラム}
+実行する際の第二引数で入力ファイル名を指定し,出力するファイルは
+第三引数にR,G,Bいずれかのアルファベットと.jpgを加えたファイル名を出力するようにした.
+\begin{verbatim}
+例： ./a.out file1.jpg file2
+\end{verbatim}
+以上の実行でfile1.jpgを受け取りfile2R.jpg,file2G.jpg,file2B.jpgを出力する.
+出力例を以下に示す.\\
+\begin{figure}
+\begin{tabular}{cc}
+\begin{minipage}{0.5\hsize}
+\includegraphics[bb=0 0 768 576,scale=.3]{sangen.jpg}
+\caption{file1.jpg}
+\end{minipage}
+\begin{minipage}{0.5\hsize}
+\includegraphics[bb=0 0 768 576,scale=.3]{fileR.jpg}
+\caption{file2R.jpg}
+\end{minipage}
+\end{tabular}
+\begin{tabular}{cc}
+\begin{minipage}{0.5\hsize}
+\includegraphics[bb=0 0 768 576,scale=.3]{fileG.jpg}
+\caption{file2G.jpg}
+\end{minipage}
+\begin{minipage}{0.5\hsize}
+\includegraphics[bb=0 0 768 576,scale=.3]{fileB.jpg}
+\caption{file2B.jpg}
+\end{minipage}
+\end{tabular}
+\end{figure}
+\end{document}

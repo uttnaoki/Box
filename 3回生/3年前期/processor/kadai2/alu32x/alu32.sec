@@ -1,0 +1,115 @@
+# (test_alu32_01.sec)
+#
+# version 3.1 - 2015/05/19
+#  - modified instrin terminal name for each operations
+#
+# version 3.0 - 2011/06/22
+#  - modified to check output via register
+#
+# version 2.0 - 2008/06/03
+#
+
+sflread cla32.sfl	# SFLファイルの読込み
+sflread alu32.sfl	# SFLファイルの読込み
+autoinstall alu32	# モジュール alu32 のインストール
+
+speak alu32.result	# 結果の出力先(指定する場合，コメントを外す) 
+
+print "[simulation result (alu32)]\n"
+print "------+--------------------------------------+------------------\n"
+print "      |              input                   |      output\n"
+print "      |                                    ~ |  \n"
+print " time |     a               b         +-&|^| |    out         v z \n"
+print "------+--------------------------------------+------------------\n"
+#     " tttt | 0xXXXXXXXX     0xXXXXXXXX     xxxxxx | 0xXXXXXXXX     X X
+#     "      | (dddddddddddd) (dddddddddddd)        |  (ddddddddddd) \n"
+rpt_add A " %4t | 0x%x     0x%x     %1b%1b%1b%1b%1b%1b | 0x%x     %1b %1b \n" \
+    a b op_add op_sub op_and op_or op_xor op_nor out overflow zero
+rpt_add B "      | (%12d) (%12d)        | (%12d)\n" a b out
+
+set a D200000; set b D100000;
+hold a; hold b; 
+set op_add 0; set op_sub 0
+set op_and 0; set op_or 0; set op_xor 0; set op_nor 0;
+hold op_add; hold op_sub; hold op_and; hold op_or; hold op_xor; hold op_nor;
+
+set op_add 1; set op_sub 0;
+set op_and 0; set op_or 0; set op_xor 0; set op_nor 0
+print " %4t | 0x%x     0x%x     %1b%1b%1b%1b%1b%1b | 0x%x     %1b %1b \n" \
+    a b op_add op_sub op_and op_or op_xor op_nor out overflow zero
+print "      | (%12d) (%12d)        | (%12d)\n" a b out
+
+set op_add 0; set op_sub 1;
+set op_and 0; set op_or 0; set op_xor 0; set op_nor 0
+print " %4t | 0x%x     0x%x     %1b%1b%1b%1b%1b%1b | 0x%x     %1b %1b \n" \
+    a b op_add op_sub op_and op_or op_xor op_nor out overflow zero
+print "      | (%12d) (%12d)        | (%12d)\n" a b out
+
+set a D121212; set b D121212;
+
+set op_add 1; set op_sub 0;
+set op_and 0; set op_or 0; set op_xor 0; set op_nor 0
+print " %4t | 0x%x     0x%x     %1b%1b%1b%1b%1b%1b | 0x%x     %1b %1b \n" \
+    a b op_add op_sub op_and op_or op_xor op_nor out overflow zero
+print "      | (%12d) (%12d)        | (%12d)\n" a b out
+
+set op_add 0; set op_sub 1;
+set op_and 0; set op_or 0; set op_xor 0; set op_nor 0
+print " %4t | 0x%x     0x%x     %1b%1b%1b%1b%1b%1b | 0x%x     %1b %1b \n" \
+    a b op_add op_sub op_and op_or op_xor op_nor out overflow zero
+print "      | (%12d) (%12d)        | (%12d)\n" a b out
+
+
+set op_add 0; set op_sub 0;
+set op_and 1; set op_or 0; set op_xor 0; set op_nor 0
+print " %4t | 0x%x     0x%x     %1b%1b%1b%1b%1b%1b | 0x%x     %1b %1b \n" \
+    a b op_add op_sub op_and op_or op_xor op_nor out overflow zero
+print "      | (%12d) (%12d)        | (%12d)\n" a b out
+
+set op_add 0; set op_sub 0;
+set op_and 0; set op_or 1; set op_xor 0; set op_nor 0
+print " %4t | 0x%x     0x%x     %1b%1b%1b%1b%1b%1b | 0x%x     %1b %1b \n" \
+    a b op_add op_sub op_and op_or op_xor op_nor out overflow zero
+print "      | (%12d) (%12d)        | (%12d)\n" a b out
+
+set op_add 0; set op_sub 0;
+set op_and 0; set op_or 0; set op_xor 1; set op_nor 0
+print " %4t | 0x%x     0x%x     %1b%1b%1b%1b%1b%1b | 0x%x     %1b %1b \n" \
+    a b op_add op_sub op_and op_or op_xor op_nor out overflow zero
+print "      | (%12d) (%12d)        | (%12d)\n" a b out
+
+set op_add 0; set op_sub 0;
+set op_and 0; set op_or 0; set op_xor 0; set op_nor 1
+print " %4t | 0x%x     0x%x     %1b%1b%1b%1b%1b%1b | 0x%x     %1b %1b \n" \
+    a b op_add op_sub op_and op_or op_xor op_nor out overflow zero
+print "      | (%12d) (%12d)        | (%12d)\n" a b out
+
+set a X7fff0000; set b X7fffffff;
+
+set op_add 1; set op_sub 0;
+set op_and 0; set op_or 0; set op_xor 0; set op_nor 0; forward +1
+
+set op_add 0; set op_sub 1;
+set op_and 0; set op_or 0; set op_xor 0; set op_nor 0; forward +1
+
+set op_add 0; set op_sub 0;
+set op_and 1; set op_or 0; set op_xor 0; set op_nor 0; forward +1
+
+set op_add 0; set op_sub 0;
+set op_and 0; set op_or 1; set op_xor 0; set op_nor 0; forward +1
+
+set op_add 0; set op_sub 0;
+set op_and 0; set op_or 0; set op_xor 1; set op_nor 0; forward +1
+
+set op_add 0; set op_sub 0;
+set op_and 0; set op_or 0; set op_xor 0; set op_nor 1; forward +1
+
+set a X80000000; set b X00000001;
+
+set op_add 1; set op_sub 0;
+set op_and 0; set op_or 0; set op_xor 0; set op_nor 0; forward +1
+
+set op_add 0; set op_sub 1;
+set op_and 0; set op_or 0; set op_xor 0; set op_nor 0; forward +1
+
+# EOF
