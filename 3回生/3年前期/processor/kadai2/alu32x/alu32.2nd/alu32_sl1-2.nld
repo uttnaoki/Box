@@ -1,9 +1,0 @@
-(def-module	alu32_sl1-2
-	(def-pin	inserted_pin	type	output)
-	(def-pin	out	type	input)
-
-	(def-comp	inv-	nand-2)
-
-	(def-net	out	nand-2.in)
-	(def-net	inserted_pin	nand-2.nout)
-)

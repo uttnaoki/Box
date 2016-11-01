@@ -1,8 +1,0 @@
-111,hhh,7-7-7,fff,eee
-222,aaa,8-8-8,ggg,fff
-333,bbb,1-1-1,hhh,ggg
-444,ccc,2-2-2,aaa,hhh
-555,ddd,3-3-3,bbb,aaa
-666,eee,4-4-4,ccc,bbb
-777,fff,5-5-5,ddd,ccc
-888,ggg,6-6-6,eee,ddd

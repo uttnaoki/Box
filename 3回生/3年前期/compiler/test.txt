@@ -1,7 +1,0 @@
-main(b){
-	define i;
-	define a;
-	define b;
-
-	i=1+(4-a)+b;
-}
